@@ -24,10 +24,14 @@ export default [
     ],
     plugins: [
       peerDepsExternal(),
+      typescript({ tsconfig: './tsconfig.json' }),
+      postcss({
+        extract: false,
+        modules: true,
+        use: ['sass'],
+      }),
       resolve(),
       commonjs(),
-      typescript({ tsconfig: './tsconfig.json' }),
-      postcss({ modules: true }),
       terser(),
     ],
   },

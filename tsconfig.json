@@ -15,9 +15,7 @@
     "allowSyntheticDefaultImports": true,
     "emitDeclarationOnly": true,
     "plugins": [
-      {
-        "name": "typescript-plugin-css-modules"
-      }
+      {"name": "typescript-plugin-css-modules"}
     ],
   }
 }
