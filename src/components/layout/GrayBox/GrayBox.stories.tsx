@@ -1,9 +1,9 @@
 import React from 'react';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
-import GrayBox from '../components/layout/GrayBox/GrayBox';
+import GrayBox from './GrayBox';
 
 export default {
-  title: 'Example/GrayBox',
+  title: 'Layout/GrayBox',
   component: GrayBox,
   argTypes: {},
 } as ComponentMeta<typeof GrayBox>;
