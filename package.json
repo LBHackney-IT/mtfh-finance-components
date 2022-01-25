@@ -1,12 +1,13 @@
 {
-  "name": "mtfh-finance-components",
+  "name": "@hackney/mtfh-finance-components",
   "description": "Components library for Finance project",
   "version": "1.0.0",
   "scripts": {
     "rollup": "rollup -c",
     "lint": "eslint --ext .ts,.tsx ./src",
     "format": "prettier --write ./src",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "publish:public": "npm run rollup && npm publish --access public"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
@@ -59,5 +60,13 @@
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts"
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LBHackney-IT/mtfh-finance-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LBHackney-IT/mtfh-finance-components/issues"
+  },
+  "homepage": "https://github.com/LBHackney-IT/mtfh-finance-components#readme"
 }
