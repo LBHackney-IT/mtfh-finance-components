@@ -24,19 +24,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@babel/preset-env": "^7.16.11",
-    "@babel/preset-react": "^7.16.7",
-    "babel-jest": "^27.4.6",
     "classnames": "^2.3.1",
-    "lbh-frontend": "^3.6.1",
-    "react-test-renderer": "^17.0.2"
+    "lbh-frontend": "^3.6.1"
   },
   "peerDependencies": {
-    "lbh-frontend": "^3.6.1",
     "react": "^17.0.2"
   },
   "devDependencies": {
     "@babel/core": "7.16.12",
+    "@babel/plugin-transform-react-jsx": "^7.16.7",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.1.1",
@@ -53,6 +51,7 @@
     "@types/react": "^17.0.37",
     "@typescript-eslint/eslint-plugin": "^5.7.0",
     "@typescript-eslint/parser": "^5.0.0",
+    "babel-jest": "^27.4.6",
     "babel-loader": "8.2.3",
     "css-loader": "5.2.6",
     "eslint": "^8.4.1",
