@@ -9,7 +9,11 @@
     "prepare": "husky install",
     "publish:public": "npm run rollup && npm publish --access public",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "test": "jest --watch -u",
+    "test:ci": "jest --ci",
+    "test:coverage": "jest --coverage",
+    "test:badges": "npm run test:coverage && jest-coverage-badges --output \"./badges\""
   },
   "lint-staged": {
     "*.{ts,tsx}": [
@@ -20,8 +24,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "babel-jest": "^27.4.6",
     "classnames": "^2.3.1",
-    "lbh-frontend": "^3.6.1"
+    "lbh-frontend": "^3.6.1",
+    "react-test-renderer": "^17.0.2"
   },
   "peerDependencies": {
     "lbh-frontend": "^3.6.1",
@@ -29,6 +37,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.16.12",
+    "@babel/preset-typescript": "^7.16.7",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.1.1",
     "@rollup/plugin-typescript": "^8.3.0",
@@ -37,6 +46,10 @@
     "@storybook/addon-links": "6.4.14",
     "@storybook/preset-scss": "1.0.3",
     "@storybook/react": "6.4.14",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/react-hooks": "^7.0.2",
+    "@testing-library/user-event": "^13.5.0",
     "@types/react": "^17.0.37",
     "@typescript-eslint/eslint-plugin": "^5.7.0",
     "@typescript-eslint/parser": "^5.0.0",
@@ -52,6 +65,9 @@
     "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-react-hooks": "^4.3.0",
     "husky": ">=6",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.4.7",
+    "jest-coverage-badges": "^1.1.2",
     "lint-staged": ">=10",
     "postcss": "^8.4.5",
     "prettier": "^2.5.1",
