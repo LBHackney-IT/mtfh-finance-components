@@ -23,3 +23,7 @@ This package expects you use `yarn` as the package manager, and use `node` with 
 ### Storybook
 
 You can review components with storybook with `yarn storybook`
+
+### Chromatic
+
+You can find the [deployed chromatic here](https://www.chromatic.com/library?appId=61f0267fc8e670003a291a88).
