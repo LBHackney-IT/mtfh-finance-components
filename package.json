@@ -29,7 +29,8 @@
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.3.1",
-    "lbh-frontend": "^3.6.1"
+    "lbh-frontend": "^3.6.1",
+    "react-use": "17.3.2"
   },
   "peerDependencies": {
     "react": "^17.0.2"
@@ -52,7 +53,7 @@
     "@testing-library/react": "^12.1.2",
     "@testing-library/react-hooks": "^7.0.2",
     "@testing-library/user-event": "^13.5.0",
-    "@types/react": "^17.0.37",
+    "@types/react": "17.0.38",
     "@typescript-eslint/eslint-plugin": "^5.7.0",
     "@typescript-eslint/parser": "^5.0.0",
     "babel-jest": "^27.4.6",
