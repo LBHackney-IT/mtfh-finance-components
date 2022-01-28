@@ -5,7 +5,7 @@ import { useToggle } from 'react-use';
 import classnames from 'classnames';
 
 // FIXME Fix svg import
-//  import { ReactComponent as LinkArrow }  from '../../../assets/link-arrow.svg';
+import LinkArrow from '../../../assets/link-arrow.svg';
 import styles from './InformationBlock.module.scss';
 
 import Pressable from '../../ui/Pressable';
@@ -73,7 +73,7 @@ const InformationBlock = ({
 
       <Pressable className={styles.button} onClick={toggleExpanded}>
         <Typography size="s">{isExpanded ? 'Collapse' : 'Expand'}</Typography>
-        {/*  <LinkArrow className={isExpanded ? styles.imageTop : styles.imageBottom} />  */}
+        <LinkArrow className={isExpanded ? styles.imageTop : styles.imageBottom} />
       </Pressable>
     </section>
   );
