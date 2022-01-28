@@ -1,7 +1,7 @@
 {
   "name": "@hackney/mtfh-finance-components",
   "description": "Components library for Finance project",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "publishConfig": {
     "access": "public"
   },
@@ -10,7 +10,7 @@
     "lint": "eslint --ext .ts,.tsx ./src",
     "format": "prettier --write ./src",
     "prepare": "husky install",
-    "release": "npm run rollup && npm publish",
+    "release": "npm run rollup && np --test-script=test:ci",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "test": "jest --watch -u",
@@ -57,7 +57,7 @@
     "@testing-library/react": "^12.1.2",
     "@testing-library/react-hooks": "^7.0.2",
     "@testing-library/user-event": "^13.5.0",
-    "@types/react": "^17.0.37",
+    "@types/react": "17.0.38",
     "@typescript-eslint/eslint-plugin": "^5.7.0",
     "@typescript-eslint/parser": "^5.0.0",
     "babel-jest": "^27.4.6",
@@ -79,6 +79,7 @@
     "jest": "^27.4.7",
     "jest-coverage-badges": "^1.1.2",
     "lint-staged": ">=10",
+    "np": "^7.6.0",
     "postcss": "^8.4.5",
     "prettier": "^2.5.1",
     "react": "17.0.2",
@@ -108,5 +109,8 @@
   "bugs": {
     "url": "https://github.com/LBHackney-IT/mtfh-finance-components/issues"
   },
-  "homepage": "https://github.com/LBHackney-IT/mtfh-finance-components#readme"
+  "homepage": "https://github.com/LBHackney-IT/mtfh-finance-components#readme",
+  "np": {
+    "yarn": false
+  }
 }
