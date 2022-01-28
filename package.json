@@ -2,12 +2,15 @@
   "name": "@hackney/mtfh-finance-components",
   "description": "Components library for Finance project",
   "version": "1.0.1",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "rollup": "rollup -c",
     "lint": "eslint --ext .ts,.tsx ./src",
     "format": "prettier --write ./src",
     "prepare": "husky install",
-    "publish:public": "npm run rollup && npm publish --access public",
+    "release": "npm run rollup && npm publish",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "test": "jest --watch -u",
