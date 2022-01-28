@@ -73,6 +73,7 @@
     "jest": "^27.4.7",
     "jest-coverage-badges": "^1.1.2",
     "lint-staged": ">=10",
+    "np": "^7.6.0",
     "postcss": "^8.4.5",
     "prettier": "^2.5.1",
     "react": "17.0.2",
