@@ -10,7 +10,7 @@
     "lint": "eslint --ext .ts,.tsx ./src",
     "format": "prettier --write ./src",
     "prepare": "husky install",
-    "release": "npm run rollup && npm publish",
+    "release": "npm run rollup && np",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "test": "jest --watch -u",
@@ -103,5 +103,9 @@
   "bugs": {
     "url": "https://github.com/LBHackney-IT/mtfh-finance-components/issues"
   },
-  "homepage": "https://github.com/LBHackney-IT/mtfh-finance-components#readme"
+  "homepage": "https://github.com/LBHackney-IT/mtfh-finance-components#readme",
+  "np": {
+    "yarn": false,
+    "contents": "dist"
+  }
 }
