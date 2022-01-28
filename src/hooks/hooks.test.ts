@@ -22,6 +22,7 @@ describe('useTabs', () => {
     const useStateMock = (state: ReactNode) => [state, setStateMock];
 
     // FIXME Type declaration for jest doesnt match with an original useState
+    //  @ts-ignore
     jest.spyOn(React, 'useState').mockImplementation(useStateMock);
 
     const { result } = renderHook(() => useTabs(components));
