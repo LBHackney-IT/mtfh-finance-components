@@ -9,4 +9,12 @@ describe('InfoItemsList', () => {
 
     expect(content).toBeInTheDocument();
   });
+
+  it('renders with extra className', () => {
+    render(<InfoItemsList className="foo">Content</InfoItemsList>);
+
+    const content = screen.getByText('Content');
+
+    expect(content).toHaveClass('foo');
+  });
 });
