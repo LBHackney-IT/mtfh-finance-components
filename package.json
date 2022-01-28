@@ -105,7 +105,6 @@
   },
   "homepage": "https://github.com/LBHackney-IT/mtfh-finance-components#readme",
   "np": {
-    "yarn": false,
-    "contents": "dist"
+    "yarn": false
   }
 }
