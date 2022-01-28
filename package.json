@@ -10,7 +10,7 @@
     "lint": "eslint --ext .ts,.tsx ./src",
     "format": "prettier --write ./src",
     "prepare": "husky install",
-    "release": "npm run rollup && np --any-branch --test-script=test:ci",
+    "release": "npm run rollup && np --test-script=test:ci",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "test": "jest --watch -u",
