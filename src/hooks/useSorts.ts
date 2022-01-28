@@ -2,9 +2,9 @@ import { useCallback } from 'react';
 import { useSet } from 'react-use';
 
 const useSorts = <T = string>() => {
-  const [selectedOptions, { toggle }] = useSet(new Set());
+  const [selectedOptions, { toggle }] = useSet<T>(new Set());
 
-  const onChange = useCallback((id: T) => toggle(id), [toggle]);
+  const onChange = useCallback((id) => toggle(id), [toggle]);
 
   return { selectedOptions, onChange };
 };
