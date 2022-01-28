@@ -9,6 +9,10 @@ const components = {
   Estate: 'estate',
 };
 
+type Dispatch<A> = (value: A) => void;
+type SetStateAction<S> = S | ((prevState: S) => S);
+type MockUseState<S> = (initialState: S) => [S, Dispatch<SetStateAction<S>>];
+
 describe('useTabs', () => {
   it('returns correct tabContent', () => {
     const { result } = renderHook(() => useTabs(components));
@@ -18,8 +22,9 @@ describe('useTabs', () => {
 
   it('returns correct tabsProps', () => {
     const setStateMock = jest.fn();
-    const useStateMock = (state: string) => [state, setStateMock];
+    const useStateMock: MockUseState<unknown> = (state) => [state, setStateMock];
 
+    // FIXME Type declaration for jest doesnt match with an original useState
     jest.spyOn(React, 'useState').mockImplementation(useStateMock);
 
     const { result } = renderHook(() => useTabs(components));
