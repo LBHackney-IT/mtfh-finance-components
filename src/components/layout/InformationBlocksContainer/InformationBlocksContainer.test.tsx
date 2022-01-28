@@ -9,4 +9,14 @@ describe('InformationBlocksContainer', () => {
 
     expect(content).toBeInTheDocument();
   });
+
+  it('renders with extra className', () => {
+    render(
+      <InformationBlocksContainer className="foo">Content</InformationBlocksContainer>
+    );
+
+    const content = screen.getByText('Content');
+
+    expect(content).toHaveClass('foo');
+  });
 });

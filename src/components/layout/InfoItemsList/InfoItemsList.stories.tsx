@@ -9,7 +9,11 @@ export default {
 } as ComponentMeta<typeof InfoItemsList>;
 
 const Template: ComponentStory<typeof InfoItemsList> = (args) => (
-  <InfoItemsList {...args} />
+  <InfoItemsList {...args}>
+    <div>Item 1</div>
+    <div>Item 2</div>
+    <div>Item 3</div>
+  </InfoItemsList>
 );
 
 export const Normal = Template.bind({});

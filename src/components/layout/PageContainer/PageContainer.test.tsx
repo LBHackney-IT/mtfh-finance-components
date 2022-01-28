@@ -9,4 +9,12 @@ describe('PageContainer', () => {
 
     expect(content).toBeInTheDocument();
   });
+
+  it('renders with extra className', () => {
+    render(<PageContainer className="foo">Content</PageContainer>);
+
+    const content = screen.getByText('Content');
+
+    expect(content).toHaveClass('foo');
+  });
 });
