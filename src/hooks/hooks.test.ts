@@ -1,4 +1,5 @@
 import React from 'react';
+import type { ReactNode } from 'react';
 
 import { renderHook } from '@testing-library/react-hooks';
 
@@ -9,10 +10,6 @@ const components = {
   Estate: 'estate',
 };
 
-type Dispatch<A> = (value: A) => void;
-type SetStateAction<S> = S | ((prevState: S) => S);
-type MockUseState<S> = (initialState: S) => [S, Dispatch<SetStateAction<S>>];
-
 describe('useTabs', () => {
   it('returns correct tabContent', () => {
     const { result } = renderHook(() => useTabs(components));
@@ -22,7 +19,7 @@ describe('useTabs', () => {
 
   it('returns correct tabsProps', () => {
     const setStateMock = jest.fn();
-    const useStateMock: MockUseState<unknown> = (state) => [state, setStateMock];
+    const useStateMock = (state: ReactNode) => [state, setStateMock];
 
     // FIXME Type declaration for jest doesnt match with an original useState
     jest.spyOn(React, 'useState').mockImplementation(useStateMock);
