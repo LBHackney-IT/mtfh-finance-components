@@ -4,12 +4,12 @@ import classnames from 'classnames';
 import styles from './Pressable.module.scss';
 
 type PressableProps = PropsWithChildren<{
-  className: string;
-  onClick: () => void;
+  className?: string;
+  onClick?: () => void;
 }>;
 
 const Pressable = forwardRef<HTMLButtonElement, PressableProps>(
-  ({ onClick, children, className, ...rest }, ref) => (
+  ({ onClick = () => {}, children = '', className = '', ...rest }, ref) => (
     <button
       ref={ref}
       type="button"

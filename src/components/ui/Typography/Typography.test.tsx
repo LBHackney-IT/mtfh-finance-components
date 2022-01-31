@@ -1,11 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-
 import Typography from './index';
+import type { TypographySize, TypographyVariant, TypographyWeight } from './index';
 
-const headingVariants = ['h1', 'h2', 'h3', 'h4', 'h5'];
-const paragraphVariants = ['caption', 'body'];
-const weights = [300, 400, 600, 700];
+const headingVariants: Array<TypographyVariant> = ['h1', 'h2', 'h3', 'h4', 'h5'];
+const paragraphVariants: Array<TypographyVariant> = ['caption', 'body'];
+const weights: Array<TypographyWeight> = [300, 400, 600, 700];
 
 describe('Typography', () => {
   test.each(headingVariants)('renders %s', (variant) => {
@@ -30,23 +30,29 @@ describe('Typography', () => {
     expect(screen.getByText('text')).toHaveClass('lbh-body-xs');
   });
 
-  test.each(['xs', 's', 'm', 'l'])('renders body size %s', (size) => {
-    render(
-      <Typography variant="body" size={size}>
-        text
-      </Typography>
-    );
-    expect(screen.getByText('text')).toHaveClass(`lbh-body-${size}`);
-  });
+  test.each(['xs', 's', 'm', 'l'] as Array<TypographySize>)(
+    'renders body size %s',
+    (size) => {
+      render(
+        <Typography variant="body" size={size}>
+          text
+        </Typography>
+      );
+      expect(screen.getByText('text')).toHaveClass(`lbh-body-${size}`);
+    }
+  );
 
-  test.each(['m', 'l', 'xl'])('renders caption size %s', (size) => {
-    render(
-      <Typography variant="caption" size={size}>
-        text
-      </Typography>
-    );
-    expect(screen.getByText('text')).toHaveClass(`govuk-caption-${size}`);
-  });
+  test.each(['m', 'l', 'xl'] as Array<TypographySize>)(
+    'renders caption size %s',
+    (size) => {
+      render(
+        <Typography variant="caption" size={size}>
+          text
+        </Typography>
+      );
+      expect(screen.getByText('text')).toHaveClass(`govuk-caption-${size}`);
+    }
+  );
 
   test.each(weights)('renders weight %s', (weight) => {
     render(

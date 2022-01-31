@@ -30,6 +30,7 @@
   "dependencies": {
     "@emotion/react": "11.7.1",
     "@mui/material": "5.3.1",
+    "@typescript-eslint/eslint-plugin": "5.10.1",
     "classnames": "^2.3.1",
     "lbh-frontend": "^3.6.1",
     "react-use": "17.3.2"
@@ -58,8 +59,7 @@
     "@testing-library/react-hooks": "^7.0.2",
     "@testing-library/user-event": "^13.5.0",
     "@types/react": "17.0.38",
-    "@typescript-eslint/eslint-plugin": "^5.7.0",
-    "@typescript-eslint/parser": "^5.0.0",
+    "@typescript-eslint/parser": "5.10.1",
     "babel-jest": "^27.4.6",
     "babel-loader": "8.2.3",
     "babel-plugin-inline-react-svg": "2.0.1",

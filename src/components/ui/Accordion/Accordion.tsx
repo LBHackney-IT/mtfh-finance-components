@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import type { PropsWithChildren } from 'react';
+import type { PropsWithChildren, ReactChild } from 'react';
 
 import MUIAccordion from '@mui/material/Accordion';
 
@@ -14,7 +14,7 @@ const Accordion = ({ isExpanded, children }: AccordionProps) => (
     expanded={isExpanded}
     classes={{ root: styles.root, expanded: styles.expanded }}
   >
-    {children}
+    {children as ReactChild}
   </MUIAccordion>
 );
 

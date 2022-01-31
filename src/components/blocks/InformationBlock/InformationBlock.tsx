@@ -1,10 +1,10 @@
 import { memo } from 'react';
 import type { PropsWithChildren, ReactNode } from 'react';
 import { useToggle } from 'react-use';
-
 import classnames from 'classnames';
+import type { TypographyWeight } from '../../ui/Typography';
 
-// FIXME Fix svg import
+//  @ts-ignore
 import LinkArrow from '../../../assets/link-arrow.svg';
 import styles from './InformationBlock.module.scss';
 
@@ -61,7 +61,11 @@ const InformationBlock = ({
                 <Typography size="s">{item.value ?? '-'}</Typography>
 
                 {item.label && (
-                  <Typography className={styles.informationValue} weight={700} size="s">
+                  <Typography
+                    className={styles.informationValue}
+                    weight={700 as TypographyWeight}
+                    size="s"
+                  >
                     {item.label}
                   </Typography>
                 )}

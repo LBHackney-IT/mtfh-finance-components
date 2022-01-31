@@ -3,7 +3,15 @@ import type { PropsWithChildren } from 'react';
 import classnames from 'classnames';
 import styles from './Typography.module.scss';
 
-const classesMap = {
+export type TypographyVariant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'caption' | 'body';
+export type TypographySize = null | 'xs' | 's' | 'm' | 'l' | 'xl';
+export type TypographyWeight = 300 | 400 | 600 | 700;
+
+type ClassesMap = {
+  [key: string]: string;
+};
+
+const classesMap: ClassesMap = {
   h1: 'lbh-heading-h1',
   h2: 'lbh-heading-h2',
   h3: 'lbh-heading-h3',
@@ -18,9 +26,9 @@ const classesMap = {
   'body-xs': 'lbh-body-xs',
 };
 
-const getVariantClass = (variant, size) =>
-  classesMap[size ? `${variant}-${size}` : variant];
-const getWeightClass = (weight) => {
+const getVariantClass = (variant: TypographyVariant, size: TypographySize): string =>
+  classesMap[(size ? `${variant}-${size}` : variant) as keyof ClassesMap];
+const getWeightClass = (weight: TypographyWeight): string => {
   const weightMap = {
     300: 'w300',
     400: 'w400',
@@ -31,11 +39,11 @@ const getWeightClass = (weight) => {
 };
 
 type TypographyProps = PropsWithChildren<{
-  variant: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'caption' | 'body';
-  size: null | 'xs' | 's' | 'm' | 'l' | 'xl';
-  className: string;
-  weight: 300 | 400 | 600 | 700;
-  onClick: () => void;
+  variant?: TypographyVariant;
+  size?: TypographySize;
+  className?: string;
+  weight?: TypographyWeight;
+  onClick?: () => void;
 }>;
 
 const Typography = ({
