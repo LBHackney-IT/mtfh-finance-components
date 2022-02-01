@@ -1,4 +1,3 @@
-import React from 'react';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import InformationBlocksContainer from './InformationBlocksContainer';
 import InformationBlock from '../../blocks/InformationBlock';

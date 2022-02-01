@@ -1,14 +1,14 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
-import PageContainer from './PageContainer';
+import Typography from './Typography';
 
 export default {
-  title: 'Layout/PageContainer',
-  component: PageContainer,
+  title: 'Ui/Typography',
+  component: Typography,
   argTypes: {},
-} as ComponentMeta<typeof PageContainer>;
+} as ComponentMeta<typeof Typography>;
 
-const Template: ComponentStory<typeof PageContainer> = (args) => (
-  <PageContainer {...args}>
+const Template: ComponentStory<typeof Typography> = (args) => (
+  <Typography {...args}>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
     incididunt ut labore et dolore magna aliqua. Sodales neque sodales ut etiam sit amet
     nisl purus in. Neque viverra justo nec ultrices dui sapien eget mi proin. Nunc
@@ -28,7 +28,7 @@ const Template: ComponentStory<typeof PageContainer> = (args) => (
     ullamcorper dignissim. At erat pellentesque adipiscing commodo elit at imperdiet dui
     accumsan. Fusce id velit ut tortor pretium. Sollicitudin ac orci phasellus egestas
     tellus. Pretium fusce id velit ut tortor.
-  </PageContainer>
+  </Typography>
 );
 
 export const Normal = Template.bind({});
