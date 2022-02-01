@@ -63,7 +63,7 @@ const InformationBlock = ({
                 {item.label && (
                   <Typography
                     className={styles.informationValue}
-                    weight={700 as TypographyWeight}
+                    weight={700}
                     size="s"
                   >
                     {item.label}
