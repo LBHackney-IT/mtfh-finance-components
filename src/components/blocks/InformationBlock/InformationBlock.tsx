@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import type { PropsWithChildren, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { useToggle } from 'react-use';
 import classnames from 'classnames';
 import type { TypographyWeight } from '../../ui/Typography';
@@ -18,14 +18,14 @@ export type InformationBlockData = {
   label: ReactNode;
 };
 
-export type InformationBlockProps = PropsWithChildren<{
+export type InformationBlockProps = {
   className?: string;
   variant?: 'main' | 'regular';
   dataInRow?: boolean;
   data: Array<InformationBlockData>;
   header: string;
   icon: ReactNode;
-}>;
+};
 
 const InformationBlock = ({
   data,
