@@ -46,7 +46,7 @@ NoDataRow.args = {
   data,
   icon: 'icon',
   variant: 'main',
-  dataRow: false,
+  dataInRow: false,
 };
 
 export const WithDataRow = Template.bind({});
@@ -55,5 +55,5 @@ WithDataRow.args = {
   data,
   icon: 'icon',
   variant: 'main',
-  dataRow: true,
+  dataInRow: true,
 };

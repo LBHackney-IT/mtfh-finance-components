@@ -1,10 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import InformationBlock from './InformationBlock';
+import type { InformationBlockProps } from './InformationBlock';
 
 describe('InformationBlock', () => {
   describe("with a 'main' variant", () => {
     it('renders with given text', () => {
-      const args = {
+      const args: InformationBlockProps = {
         variant: 'main',
         data: [
           {
@@ -27,7 +28,7 @@ describe('InformationBlock', () => {
 
   describe("with a 'regular' variant", () => {
     it('renders with given text', () => {
-      const args = {
+      const args: InformationBlockProps = {
         variant: 'regular',
         data: [
           {
@@ -49,7 +50,7 @@ describe('InformationBlock', () => {
   });
 
   it('renders with extra className', () => {
-    const args = {
+    const args: InformationBlockProps = {
       variant: 'regular',
       data: [
         {

@@ -17,9 +17,11 @@ export type InformationBlockData = {
   label: ReactNode;
 };
 
+export type InformationBlockVariant = 'main' | 'regular';
+
 export type InformationBlockProps = {
   className?: string;
-  variant?: 'main' | 'regular';
+  variant?: InformationBlockVariant;
   dataInRow?: boolean;
   data: Array<InformationBlockData>;
   header: string;
