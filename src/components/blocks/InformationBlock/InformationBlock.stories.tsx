@@ -7,25 +7,53 @@ export default {
   argTypes: {},
 } as ComponentMeta<typeof InformationBlock>;
 
-const Template: ComponentStory<typeof InformationBlock> = () => {
-  const data = [
-    {
-      id: 123,
-      value: 'foo',
-      label: 'bar',
-    },
-  ];
+const Template: ComponentStory<typeof InformationBlock> = (args) => (
+  <InformationBlock {...args} />
+);
 
-  return (
-    <InformationBlock
-      header="Totals"
-      data={data}
-      icon="icon"
-      variant="main"
-      dataInRow
-    />
-  );
+const data = [
+  {
+    id: 123,
+    value: 'foo',
+    label: 'bar',
+  },
+  {
+    id: 124,
+    value: 'foo2',
+    label: 'bar2',
+  },
+];
+
+export const Main = Template.bind({});
+Main.args = {
+  header: 'Totals',
+  data,
+  icon: 'icon',
+  variant: 'main',
 };
 
-export const Normal = Template.bind({});
-Normal.args = {};
+export const Regular = Template.bind({});
+Regular.args = {
+  header: 'Totals',
+  data,
+  icon: 'icon',
+  variant: 'regular',
+};
+
+export const NoDataRow = Template.bind({});
+NoDataRow.args = {
+  header: 'Totals',
+  data,
+  icon: 'icon',
+  variant: 'main',
+  dataRow: false,
+};
+
+export const WithDataRow = Template.bind({});
+WithDataRow.args = {
+  header: 'Totals',
+  data,
+  icon: 'icon',
+  variant: 'main',
+  dataRow: true,
+};

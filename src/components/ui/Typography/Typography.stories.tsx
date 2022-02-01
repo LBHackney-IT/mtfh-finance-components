@@ -31,5 +31,84 @@ const Template: ComponentStory<typeof Typography> = (args) => (
   </Typography>
 );
 
-export const Normal = Template.bind({});
-Normal.args = {};
+export const H1 = Template.bind({});
+H1.args = {
+  variant: 'h1',
+  weight: 300,
+};
+
+export const H2 = Template.bind({});
+H2.args = {
+  variant: 'h2',
+  weight: 400,
+};
+
+export const H3 = Template.bind({});
+H3.args = {
+  variant: 'h3',
+  size: 'm',
+  weight: 600,
+};
+
+export const H4 = Template.bind({});
+H4.args = {
+  variant: 'h4',
+  size: 'l',
+  weight: 700,
+};
+
+export const H5 = Template.bind({});
+H5.args = {
+  variant: 'h5',
+  size: 'l',
+  weight: 700,
+};
+
+export const CaptionM = Template.bind({});
+CaptionM.args = {
+  variant: 'caption',
+  size: 'm',
+  weight: 700,
+};
+
+export const CaptionL = Template.bind({});
+CaptionL.args = {
+  variant: 'caption',
+  size: 'l',
+  weight: 700,
+};
+
+export const CaptionXl = Template.bind({});
+CaptionXl.args = {
+  variant: 'caption',
+  size: 'xl',
+  weight: 700,
+};
+
+export const BodyL = Template.bind({});
+BodyL.args = {
+  variant: 'body',
+  size: 'l',
+  weight: 700,
+};
+
+export const BodyM = Template.bind({});
+BodyM.args = {
+  variant: 'body',
+  size: 'm',
+  weight: 700,
+};
+
+export const BodyS = Template.bind({});
+BodyS.args = {
+  variant: 'body',
+  size: 's',
+  weight: 700,
+};
+
+export const BodyXs = Template.bind({});
+BodyXs.args = {
+  variant: 'body',
+  size: 'xs',
+  weight: 700,
+};

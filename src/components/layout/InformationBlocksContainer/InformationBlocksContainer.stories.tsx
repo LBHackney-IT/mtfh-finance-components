@@ -12,13 +12,29 @@ const Template: ComponentStory<typeof InformationBlocksContainer> = (args) => {
   const data = [
     {
       id: 123,
-      value: 'hello',
-      label: 'world',
+      value: 'foo',
+      label: 'bar',
     },
   ];
 
   return (
     <InformationBlocksContainer {...args}>
+      <InformationBlock
+        header="Totals"
+        data={data}
+        icon="icon"
+        variant="main"
+        dataInRow
+      />
+
+      <InformationBlock
+        header="Totals"
+        data={data}
+        icon="icon"
+        variant="main"
+        dataInRow
+      />
+
       <InformationBlock
         header="Totals"
         data={data}

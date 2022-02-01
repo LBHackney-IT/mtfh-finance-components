@@ -8,8 +8,20 @@ export default {
 } as ComponentMeta<typeof Pressable>;
 
 const Template: ComponentStory<typeof Pressable> = (args) => (
-  <Pressable {...args}>Click me</Pressable>
+  <Pressable {...args}>
+    <p>Click me</p>
+  </Pressable>
 );
 
 export const Normal = Template.bind({});
 Normal.args = {};
+
+export const H3 = Template.bind({});
+H3.args = {
+  children: <h3>Click me</h3>,
+};
+
+export const H5 = Template.bind({});
+H5.args = {
+  children: <h5>Click me</h5>,
+};
