@@ -8,6 +8,7 @@
   "scripts": {
     "rollup": "rollup -c",
     "lint": "eslint --ext .ts,.tsx ./src",
+    "typecheck": "tsc --noEmitOnError",
     "format": "prettier --write ./src",
     "prepare": "husky install",
     "release": "npm run rollup && np --test-script=test:ci",
