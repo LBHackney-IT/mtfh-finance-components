@@ -1,5 +1,5 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
-import Accordion from './Accordion';
+import { Accordion, AccordionDetails, AccordionSummary } from './index';
 
 export default {
   title: 'Ui/Accordion',
@@ -9,9 +9,18 @@ export default {
 
 const Template: ComponentStory<typeof Accordion> = (args) => (
   <Accordion {...args}>
-    <div>Click me</div>
+    <AccordionSummary>Foo</AccordionSummary>
+
+    <AccordionDetails>Bar</AccordionDetails>
   </Accordion>
 );
 
-export const Normal = Template.bind({});
-Normal.args = {};
+export const Expanded = Template.bind({});
+Expanded.args = {
+  isExpanded: true,
+};
+
+export const NotExpanded = Template.bind({});
+NotExpanded.args = {
+  isExpanded: false,
+};
