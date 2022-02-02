@@ -5,8 +5,8 @@ import Checkbox from '@mui/material/Checkbox';
 import styles from './CheckboxSmall.module.scss';
 
 type CheckboxSmallProps = {
-  [key: string]: unknown;
-};
+    [key: string]: unknown
+}
 
 const CheckboxSmall = (props: CheckboxSmallProps) => (
   <Checkbox

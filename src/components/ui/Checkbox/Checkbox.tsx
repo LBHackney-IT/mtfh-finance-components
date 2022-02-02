@@ -10,19 +10,19 @@ type CheckboxProps = {
   onChange: () => void;
   label: string;
   name: string;
-  description?: string | null;
+  description?: string;
   withBorder?: boolean;
-  title?: string | null;
+  title?: string;
 };
 
 const Checkbox = ({
   checked,
   onChange,
   name,
-  title = null,
+  title,
   label,
-  withBorder = false,
-  description = null,
+  withBorder,
+  description,
 }: CheckboxProps) => {
   const id = `${name}-checkbox`;
 
@@ -38,7 +38,6 @@ const Checkbox = ({
           checked={checked}
           onChange={onChange}
           className="govuk-checkboxes__input"
-          data-testid="checkbox"
         />
 
         <label className="govuk-label govuk-checkboxes__label" htmlFor={id}>
@@ -53,6 +52,12 @@ const Checkbox = ({
       )}
     </LeftBorderContainer>
   );
+};
+
+Checkbox.defaultProps = {
+  withBorder: false,
+  title: null,
+  description: null,
 };
 
 export default memo(Checkbox);

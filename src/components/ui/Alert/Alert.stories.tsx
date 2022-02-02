@@ -7,19 +7,19 @@ export default {
   argTypes: {},
 } as ComponentMeta<typeof Alert>;
 
-const Template: ComponentStory<typeof Alert> = (args) => <Alert {...args}>Alert</Alert>;
+const Template: ComponentStory<typeof Alert> = (args) => <Alert {...args} />;
 
 export const Success = Template.bind({});
 Success.args = {
-  severity: 'success',
+  severity: "success"
 };
 
 export const Info = Template.bind({});
 Info.args = {
-  severity: 'info',
+  severity: "info"
 };
 
 export const Error = Template.bind({});
 Error.args = {
-  severity: 'error',
+  severity: "error"
 };

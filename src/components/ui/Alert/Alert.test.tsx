@@ -24,7 +24,7 @@ describe('Alert', () => {
   });
 
   it('renders error alert', () => {
-    const { container } = render(<Alert severity="error">Alert</Alert>);
+    const { container } = render(<Alert severity="info">Alert</Alert>);
 
     expect(container).toMatchSnapshot();
   });
