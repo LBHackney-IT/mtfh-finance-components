@@ -1,19 +1,18 @@
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 
 import Checkbox from './index';
 
 describe('Checkbox', () => {
-  const args = {
-    checked: true,
-    onChange: () => {},
-    label: 'foo',
-    name: 'bar',
-    description: 'description',
-    title: 'title',
-  };
-
   it('renders with given label', () => {
+    const args = {
+      checked: true,
+      onChange: () => {},
+      label: 'foo',
+      name: 'bar',
+      description: 'description',
+      title: 'title',
+    };
+
     render(<Checkbox {...args} />);
 
     const element = screen.getByText('foo');
@@ -22,6 +21,15 @@ describe('Checkbox', () => {
   });
 
   it('renders with given title', () => {
+    const args = {
+      checked: true,
+      onChange: () => {},
+      label: 'foo',
+      name: 'bar',
+      description: 'description',
+      title: 'title',
+    };
+
     render(<Checkbox {...args} />);
 
     const element = screen.getByText('title');
@@ -30,28 +38,19 @@ describe('Checkbox', () => {
   });
 
   it('renders with given description', () => {
+    const args = {
+      checked: true,
+      onChange: () => {},
+      label: 'foo',
+      name: 'bar',
+      description: 'description',
+      title: 'title',
+    };
+
     render(<Checkbox {...args} />);
 
     const element = screen.getByText('description');
 
     expect(element).toBeInTheDocument();
-  });
-
-  it('renders left border when withBorder is true', () => {
-    render(<Checkbox withBorder {...args} />);
-
-    const element = screen.getByTestId('left-border-container');
-
-    expect(element).toHaveClass('container');
-  });
-
-  it('updates checked onClick', () => {
-    render(<Checkbox {...args} />);
-
-    const element: HTMLInputElement = screen.getByTestId('checkbox');
-
-    userEvent.click(element);
-
-    expect(element).toBeChecked();
   });
 });
