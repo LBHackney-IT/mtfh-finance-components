@@ -53,6 +53,7 @@ const InformationBlock = ({
 
         <AccordionDetails>
           <div
+            data-testid="information-block-values"
             className={classnames(styles.values, 'InformationBlock__values', {
               [styles.dataInRow]: dataInRow,
             })}

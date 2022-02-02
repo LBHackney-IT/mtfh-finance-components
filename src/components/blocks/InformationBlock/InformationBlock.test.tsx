@@ -49,6 +49,28 @@ describe('InformationBlock', () => {
     });
   });
 
+  it('renders with data rows and columns', () => {
+    const args: InformationBlockProps = {
+      variant: 'regular',
+      data: [
+        {
+          id: '134',
+          value: 'foo',
+          label: "foo's label",
+        },
+      ],
+      header: 'this is the header',
+      icon: 'Icon',
+      className: 'bar',
+    };
+
+    render(<InformationBlock {...args} />);
+
+    const content = screen.getByTestId('information-block-values');
+
+    expect(content).toBeInTheDocument();
+  });
+
   it('renders with extra className', () => {
     const args: InformationBlockProps = {
       variant: 'regular',
