@@ -1,3 +1,12 @@
 @import 'node_modules/lbh-frontend/lbh/helpers/colour';
 @import 'node_modules/lbh-frontend/lbh/settings/colour-palette';
 @import 'node_modules/lbh-frontend/lbh/settings/colours-applied';
+
+$lbh-asset-path: '~lbh-frontend/lbh/assets';
+$lbh-safely-embed: true;
+@import 'node_modules/lbh-frontend/lbh/all';
+@import 'margins';
+
+* {
+  box-sizing: border-box;
+}

@@ -1,0 +1,21 @@
+$sizes: 0, 10, 15, 20, 30, 40, 50, 60;
+$margins: (
+  'mr': 'right',
+  'ml': 'left',
+  'mt': 'top',
+  'mb': 'bottom',
+);
+
+.m-0 {
+  margin: 0;
+}
+
+@each $prefix, $direction in $margins {
+  .#{$prefix} {
+    @each $size in $sizes {
+      &-#{$size} {
+        margin-#{$direction}: #{$size}px;
+      }
+    }
+  }
+}
