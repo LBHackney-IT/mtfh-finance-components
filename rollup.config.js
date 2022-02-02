@@ -12,9 +12,6 @@ import { fileURLToPath } from 'url';
 
 const rootPath = dirname(fileURLToPath(import.meta.url));
 
-// NOTE Has to use CJS for postcss plugin
-const autoImport = require('./autoImport')
-
 export default [
   {
     input: 'src/index.ts',
