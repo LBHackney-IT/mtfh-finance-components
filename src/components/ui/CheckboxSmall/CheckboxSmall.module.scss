@@ -1,0 +1,10 @@
+@import 'src/styles/theme';
+
+.root.root {
+  padding: 0;
+  color: lbh-colour('lbh-a01');
+}
+
+span.checked.checked {
+  color: lbh-colour('lbh-a01');
+}

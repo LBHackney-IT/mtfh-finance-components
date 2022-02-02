@@ -1,0 +1,32 @@
+@import 'src/styles/theme';
+
+.container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  padding-left: 30px;
+  background-color: rgb(206 220 0 / 10%);
+  column-gap: 30px;
+}
+
+.success {
+  border-left: 6px solid lbh-colour('lbh-a03');
+  background-color: rgb(164 214 94 / 20%);
+}
+
+.info {
+  border-left: 6px solid lbh-colour('lbh-a03');
+}
+
+.error {
+  border-left: 6px solid lbh-colour('lbh-f02');
+
+  h3 {
+    color: lbh-colour('lbh-f02');
+  }
+}
+
+.text {
+  line-height: 30px;
+}
