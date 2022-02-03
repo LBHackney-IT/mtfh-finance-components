@@ -1,3 +1,11 @@
+$lbh-asset-path: '~lbh-frontend/lbh/assets';
+$lbh-safely-embed: true;
+@import 'node_modules/lbh-frontend/lbh/all';
+
+* {
+  box-sizing: border-box;
+}
+
 $sizes: 0, 10, 15, 20, 30, 40, 50, 60;
 $margins: (
   'mr': 'right',
