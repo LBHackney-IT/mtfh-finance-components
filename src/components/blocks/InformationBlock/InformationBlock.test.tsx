@@ -19,7 +19,7 @@ describe('InformationBlock', () => {
 
     render(<InformationBlock {...args} />);
 
-    const content = screen.getByText("foo's label");
+    const content = screen.getByTestId("information-block-container");
 
     expect(content).toHaveClass('main');
   });
@@ -40,7 +40,7 @@ describe('InformationBlock', () => {
 
     render(<InformationBlock {...args} />);
 
-    const content = screen.getByText("foo's label");
+    const content = screen.getByTestId("information-block-container");
 
     expect(content).toHaveClass('regular');
   });
@@ -58,6 +58,7 @@ describe('InformationBlock', () => {
       header: 'this is the header',
       icon: 'Icon',
       className: 'bar',
+      dataInRow: true
     };
 
     render(<InformationBlock {...args} />);

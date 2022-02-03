@@ -39,7 +39,7 @@ const InformationBlock = ({
   const [isExpanded, toggleExpanded] = useToggle(true);
 
   return (
-    <section className={classnames(styles.wrapper, styles[variant], className)}>
+    <section className={classnames(styles.wrapper, styles[variant], className)} data-testid="information-block-container">
       <Accordion isExpanded={isExpanded}>
         <AccordionSummary>
           <div className={styles.header}>
