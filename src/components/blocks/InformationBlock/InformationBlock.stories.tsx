@@ -40,8 +40,8 @@ Regular.args = {
   variant: 'regular',
 };
 
-export const NoDataRow = Template.bind({});
-NoDataRow.args = {
+export const DataInColumn = Template.bind({});
+DataInColumn.args = {
   header: 'Totals',
   data,
   icon: 'icon',
@@ -49,8 +49,8 @@ NoDataRow.args = {
   dataInRow: false,
 };
 
-export const WithDataRow = Template.bind({});
-WithDataRow.args = {
+export const DataInRow = Template.bind({});
+DataInRow.args = {
   header: 'Totals',
   data,
   icon: 'icon',
