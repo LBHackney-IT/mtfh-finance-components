@@ -2,7 +2,7 @@ import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import InformationBlock from './InformationBlock';
 
 export default {
-  title: 'Blocks/InformationBlock',
+  title: 'DataInColumn/DataInRow',
   component: InformationBlock,
   argTypes: {},
 } as ComponentMeta<typeof InformationBlock>;

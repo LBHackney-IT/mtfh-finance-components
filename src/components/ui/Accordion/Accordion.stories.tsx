@@ -19,8 +19,3 @@ export const Expanded = Template.bind({});
 Expanded.args = {
   isExpanded: true,
 };
-
-export const NotExpanded = Template.bind({});
-NotExpanded.args = {
-  isExpanded: false,
-};

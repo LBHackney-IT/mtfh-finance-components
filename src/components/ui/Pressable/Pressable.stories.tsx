@@ -8,9 +8,7 @@ export default {
 } as ComponentMeta<typeof Pressable>;
 
 const Template: ComponentStory<typeof Pressable> = (args) => (
-  <Pressable {...args}>
-    <p>Click me</p>
-  </Pressable>
+  <Pressable {...args}>Click me</Pressable>
 );
 
 export const Normal = Template.bind({});
