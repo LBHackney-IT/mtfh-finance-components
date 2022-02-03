@@ -7,12 +7,12 @@ export default {
   argTypes: {},
 } as ComponentMeta<typeof Pressable>;
 
-const Template: ComponentStory<typeof Pressable> = (args) => (
-  <Pressable {...args}>Click me</Pressable>
-);
+const Template: ComponentStory<typeof Pressable> = (args) => <Pressable {...args} />;
 
 export const Normal = Template.bind({});
-Normal.args = {};
+Normal.args = {
+  children: <p>Click me</p>,
+};
 
 export const H3 = Template.bind({});
 H3.args = {

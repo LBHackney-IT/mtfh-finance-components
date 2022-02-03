@@ -85,7 +85,7 @@ describe('InformationBlock', () => {
 
     const { container } = render(<InformationBlock {...args} />);
 
-    const content = container.getElementsByTagName('section')[0];
+    const content = screen.getByTestId("information-block-container");
 
     expect(content).toHaveClass('bar');
   });
