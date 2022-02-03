@@ -24,6 +24,10 @@
       "tsc-files --noEmit",
       "eslint --ext .ts,.tsx --fix",
       "prettier --write"
+    ],
+    "*.{js}": [
+      "eslint --ext .js --fix",
+      "prettier --write"
     ]
   },
   "author": "",
