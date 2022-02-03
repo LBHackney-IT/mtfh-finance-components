@@ -7,6 +7,9 @@ import typescript from '@rollup/plugin-typescript';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import packageJson from './package.json';
 
+// NOTE Has to use CJS for postcss plugin
+const autoImport = require('./autoImport')
+
 export default [
   {
     input: 'src/index.ts',
@@ -28,6 +31,9 @@ export default [
       postcss({
         extract: false,
         modules: true,
+        plugins: [
+            autoImport()
+        ],
         use: ['sass'],
       }),
       resolve(),
