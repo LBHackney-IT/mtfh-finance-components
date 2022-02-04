@@ -1,0 +1,37 @@
+@import 'src/theme';
+
+.buttonGroup {
+  display: flex;
+
+  %custom-button-group {
+    height: 40px;
+    border: 1px solid lbh-colour('lbh-a01');
+
+    &:focus {
+      border: 2px solid lbh-colour('lbh-primary-focus');
+    }
+  }
+
+  .green {
+    color: lbh-colour('lbh-text-white');
+  }
+
+  .white {
+    color: lbh-colour('lbh-a01');
+    background-color: lbh-colour('lbh-text-white');
+  }
+
+  .firstButtonGroup {
+    @extend %custom-button-group;
+
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .lastButtonGroup {
+    @extend %custom-button-group;
+
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
