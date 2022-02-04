@@ -27,7 +27,7 @@ const Checkbox = ({
   const id = `${name}-checkbox`;
 
   return (
-    <LeftBorderContainer enabled={withBorder} className={styles.wrapper} >
+    <LeftBorderContainer enabled={withBorder} className={styles.wrapper}>
       {title && <Typography size="m">{title}</Typography>}
 
       <div className="govuk-checkboxes__item">

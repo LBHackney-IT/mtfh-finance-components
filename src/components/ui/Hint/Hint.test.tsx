@@ -4,7 +4,7 @@ import Hint from './index';
 
 describe('Hint', () => {
   it('renders with given text', () => {
-    render(<Hint text="foo" iconType="warning" />);
+    render(<Hint text={'foo'} iconType={'warning'} />);
 
     const content = screen.getByText('foo');
 
@@ -12,7 +12,7 @@ describe('Hint', () => {
   });
 
   it('renders with correct icon', () => {
-    render(<Hint text="foo" iconType="warning" />);
+    render(<Hint text={'foo'} iconType={'warning'} />);
 
     const content = screen.getByTestId('error-circle');
 
