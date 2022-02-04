@@ -17,8 +17,4 @@ module.exports = {
   },
   // REF https://github.com/storybookjs/storybook/issues/15336
   typescript: { reactDocgen: false },
-  webpackFinal: async (config) => {
-    // TODO Set up alias later
-    return config;
-  },
 };

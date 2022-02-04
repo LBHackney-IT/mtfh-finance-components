@@ -10,24 +10,24 @@ type CheckboxProps = {
   onChange: () => void;
   label: string;
   name: string;
-  description?: string;
+  description?: string | null;
   withBorder?: boolean;
-  title?: string;
+  title?: string | null;
 };
 
 const Checkbox = ({
   checked,
   onChange,
   name,
-  title,
+  title = null,
   label,
-  withBorder,
-  description,
+  withBorder = false,
+  description = null,
 }: CheckboxProps) => {
   const id = `${name}-checkbox`;
 
   return (
-    <LeftBorderContainer enabled={withBorder} className={styles.wrapper}>
+    <LeftBorderContainer enabled={withBorder} className={styles.wrapper} >
       {title && <Typography size="m">{title}</Typography>}
 
       <div className="govuk-checkboxes__item">
@@ -38,6 +38,7 @@ const Checkbox = ({
           checked={checked}
           onChange={onChange}
           className="govuk-checkboxes__input"
+          data-testid="checkbox"
         />
 
         <label className="govuk-label govuk-checkboxes__label" htmlFor={id}>
@@ -52,12 +53,6 @@ const Checkbox = ({
       )}
     </LeftBorderContainer>
   );
-};
-
-Checkbox.defaultProps = {
-  withBorder: false,
-  title: null,
-  description: null,
 };
 
 export default memo(Checkbox);

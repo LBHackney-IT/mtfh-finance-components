@@ -22,9 +22,3 @@ Checked.args = {
     checked: true,
     ...defaultArgs
 };
-
-export const Unchecked = Template.bind({});
-Unchecked.args = {
-    checked: false,
-    ...defaultArgs
-};
