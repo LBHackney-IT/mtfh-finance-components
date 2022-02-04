@@ -9,9 +9,9 @@ export default {
 
 const Template: ComponentStory<typeof Accordion> = (args) => (
   <Accordion {...args}>
-    <AccordionSummary>Foo</AccordionSummary>
+    <AccordionSummary>Accordion Summary</AccordionSummary>
 
-    <AccordionDetails>Bar</AccordionDetails>
+    <AccordionDetails>Accordion Details</AccordionDetails>
   </Accordion>
 );
 
