@@ -46,21 +46,18 @@ H2.args = {
 export const H3 = Template.bind({});
 H3.args = {
   variant: 'h3',
-  size: 'm',
   weight: 600,
 };
 
 export const H4 = Template.bind({});
 H4.args = {
   variant: 'h4',
-  size: 'l',
   weight: 700,
 };
 
 export const H5 = Template.bind({});
 H5.args = {
   variant: 'h5',
-  size: 'l',
   weight: 700,
 };
 
