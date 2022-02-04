@@ -47,4 +47,6 @@ const Template: ComponentStory<typeof InformationBlocksContainer> = (args) => {
 };
 
 export const Normal = Template.bind({});
-Normal.args = {};
+Normal.args = {
+  className: '',
+};
