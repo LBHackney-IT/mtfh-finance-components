@@ -1,0 +1,24 @@
+.root {
+  width: 100%;
+  box-shadow: none !important;
+  background-color: transparent !important;
+
+  &::before {
+    content: none !important;
+  }
+}
+
+.expanded {
+  margin: 0 !important;
+}
+
+.summary,
+.details {
+  min-height: unset !important;
+  padding: 0 !important;
+  cursor: default !important;
+}
+
+.content {
+  margin: 0 !important;
+}

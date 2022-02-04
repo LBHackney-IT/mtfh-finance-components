@@ -1,4 +1,4 @@
-import React, { memo, PropsWithChildren } from 'react';
+import { memo, PropsWithChildren } from 'react';
 
 import classnames from 'classnames';
 
