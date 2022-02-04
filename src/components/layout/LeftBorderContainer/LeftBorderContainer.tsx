@@ -11,9 +11,9 @@ type LeftBorderContainerProps = PropsWithChildren<{
 }>;
 
 const LeftBorderContainer = ({
-  enabled = true,
-  className = '',
-  hasError = false,
+  enabled,
+  className,
+  hasError,
   children,
 }: LeftBorderContainerProps) => (
   <div
@@ -24,10 +24,15 @@ const LeftBorderContainer = ({
       },
       className
     )}
-    data-testid="left-border-container"
   >
     {children}
   </div>
 );
+
+LeftBorderContainer.defaultProps = {
+  className: '',
+  hasError: false,
+  enabled: true,
+};
 
 export default memo(LeftBorderContainer);

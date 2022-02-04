@@ -8,14 +8,17 @@ export default {
 } as ComponentMeta<typeof LeftBorderContainer>;
 
 const Template: ComponentStory<typeof LeftBorderContainer> = (args) => (
-  <LeftBorderContainer enabled {...args}>
-    This is the content
-  </LeftBorderContainer>
+  <LeftBorderContainer {...args} />
 );
 
 export const Enabled = Template.bind({});
 Enabled.args = {
   enabled: true,
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  enabled: false,
 };
 
 export const NoError = Template.bind({});

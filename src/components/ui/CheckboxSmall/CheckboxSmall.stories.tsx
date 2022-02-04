@@ -11,5 +11,12 @@ const Template: ComponentStory<typeof CheckboxSmall> = (args) => (
   <CheckboxSmall {...args} />
 );
 
-export const Normal = Template.bind({});
-Normal.args = {};
+export const Checked = Template.bind({});
+Checked.args = {
+  checked: true,
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  disabled: true,
+};

@@ -3,7 +3,7 @@
 exports[`Alert renders error alert 1`] = `
 <div>
   <div
-    class="container error"
+    class="container info"
   >
     <div />
     <h3
