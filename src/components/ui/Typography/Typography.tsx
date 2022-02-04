@@ -61,6 +61,7 @@ const Typography = ({
     <TypographyTag
       className={classnames(
         getVariantClass(variant, resultSize),
+        // @ts-ignore
         styles[getWeightClass(weight)],
         className
       )}
