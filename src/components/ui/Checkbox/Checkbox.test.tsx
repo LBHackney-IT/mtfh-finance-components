@@ -1,4 +1,5 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event'
 
 import Checkbox from './index';
 
@@ -49,8 +50,8 @@ describe('Checkbox', () => {
 
     const element: HTMLInputElement = screen.getByTestId('checkbox');
         
-    fireEvent.click(element);
+    userEvent.click(element);
 
-    expect(element.checked).toEqual(true)
+    expect(element).toBeChecked();
   });
 });
