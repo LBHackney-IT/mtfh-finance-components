@@ -10,4 +10,6 @@ export default {
 const Template: ComponentStory<typeof GrayBox> = (args) => <GrayBox {...args} />;
 
 export const Normal = Template.bind({});
-Normal.args = {};
+Normal.args = {
+  className: '',
+};

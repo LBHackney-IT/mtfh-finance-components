@@ -16,4 +16,6 @@ const Template: ComponentStory<typeof InfoItemsList> = (args) => (
 );
 
 export const Normal = Template.bind({});
-Normal.args = {};
+Normal.args = {
+  className: '',
+};

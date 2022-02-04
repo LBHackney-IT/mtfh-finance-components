@@ -32,4 +32,6 @@ const Template: ComponentStory<typeof PageContainer> = (args) => (
 );
 
 export const Normal = Template.bind({});
-Normal.args = {};
+Normal.args = {
+  className: '',
+};
