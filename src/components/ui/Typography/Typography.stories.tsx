@@ -101,20 +101,20 @@ BodyXs.args = {
 
 export const Weight300 = Template.bind({});
 Weight300.args = {
-  size: 300 as unknown as TypographySize,
+  weight: 300
 };
 
 export const Weight400 = Template.bind({});
 Weight400.args = {
-  size: 400 as unknown as TypographySize,
+  weight: 400
 };
 
 export const Weight600 = Template.bind({});
 Weight600.args = {
-  size: 600 as unknown as TypographySize,
+  weight: 600
 };
 
 export const Weight700 = Template.bind({});
 Weight700.args = {
-  size: 700 as unknown as TypographySize,
+  weight: 700
 };
