@@ -24,11 +24,17 @@
       "tsc-files --noEmit",
       "eslint --ext .ts,.tsx --fix",
       "prettier --write"
+    ],
+    "*.js": [
+      "eslint --ext .js --fix",
+      "prettier --write"
     ]
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@emotion/react": "11.7.1",
+    "@mui/material": "5.3.1",
     "classnames": "^2.3.1",
     "lbh-frontend": "^3.6.1",
     "react-use": "17.3.2"
@@ -48,6 +54,8 @@
     "@storybook/addon-actions": "6.4.14",
     "@storybook/addon-essentials": "6.4.14",
     "@storybook/addon-links": "6.4.14",
+    "@storybook/builder-webpack5": "6.4.15",
+    "@storybook/manager-webpack5": "6.4.15",
     "@storybook/preset-scss": "1.0.3",
     "@storybook/react": "6.4.14",
     "@testing-library/jest-dom": "^5.16.1",
@@ -55,10 +63,11 @@
     "@testing-library/react-hooks": "^7.0.2",
     "@testing-library/user-event": "^13.5.0",
     "@types/react": "17.0.38",
-    "@typescript-eslint/eslint-plugin": "^5.7.0",
-    "@typescript-eslint/parser": "^5.0.0",
+    "@typescript-eslint/eslint-plugin": "5.10.1",
+    "@typescript-eslint/parser": "5.10.1",
     "babel-jest": "^27.4.6",
     "babel-loader": "8.2.3",
+    "babel-plugin-inline-react-svg": "2.0.1",
     "chromatic": "^6.4.1",
     "css-loader": "5.2.6",
     "eslint": "^8.4.1",
@@ -84,6 +93,7 @@
     "rollup-plugin-dts": "^4.0.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-scss": "3.0.0",
     "rollup-plugin-terser": "^7.0.2",
     "sass": "1.49.0",
     "sass-loader": "10.1.1",

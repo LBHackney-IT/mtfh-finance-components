@@ -1,0 +1,24 @@
+@import 'src/theme';
+
+.button {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  cursor: pointer;
+  border: none;
+  background: none;
+
+  p,
+  h3,
+  h5 {
+    color: lbh-colour('lbh-a01');
+  }
+
+  &:hover {
+    p,
+    h3,
+    h5 {
+      text-decoration: underline;
+    }
+  }
+}

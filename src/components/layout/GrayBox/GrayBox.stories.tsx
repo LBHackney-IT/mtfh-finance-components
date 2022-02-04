@@ -1,4 +1,3 @@
-import React from 'react';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import GrayBox from './GrayBox';
 
@@ -11,4 +10,6 @@ export default {
 const Template: ComponentStory<typeof GrayBox> = (args) => <GrayBox {...args} />;
 
 export const Normal = Template.bind({});
-Normal.args = {};
+Normal.args = {
+  className: '',
+};
