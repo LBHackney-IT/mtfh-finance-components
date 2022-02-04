@@ -37,6 +37,7 @@
     "@mui/material": "5.3.1",
     "classnames": "^2.3.1",
     "lbh-frontend": "^3.6.1",
+    "react-loader-spinner": "4.0.0",
     "react-use": "17.3.2"
   },
   "peerDependencies": {
