@@ -3,9 +3,9 @@ import type { PropsWithChildren } from 'react';
 
 import classnames from 'classnames';
 
-import Check from '@assets/check.svg';
-import HelpOutlined from '@assets/help-outlined.svg';
-import ErrorTriangle from '@assets/error-triangle.svg';
+import Check from '../../../assets/check.svg';
+import HelpOutlined from '../../../assets/help-outlined.svg';
+import ErrorTriangle from '../../../assets/error-triangle.svg';
 
 import Typography from '../Typography';
 import styles from './Alert.module.scss';

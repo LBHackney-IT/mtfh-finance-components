@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   babel: async (options) => {
@@ -15,4 +17,8 @@ module.exports = {
   },
   // REF https://github.com/storybookjs/storybook/issues/15336
   typescript: { reactDocgen: false },
+  webpackFinal: async (config) => {
+    // TODO Set up alias later
+    return config;
+  },
 };
