@@ -25,7 +25,7 @@
       "eslint --ext .ts,.tsx --fix",
       "prettier --write"
     ],
-    "*.{js}": [
+    "*.js": [
       "eslint --ext .js --fix",
       "prettier --write"
     ]
