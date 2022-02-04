@@ -1,0 +1,10 @@
+@import 'src/theme';
+
+.container {
+  padding-left: 20px;
+  border-left: 5px solid lbh-colour('lbh-border');
+
+  &.error {
+    border-color: lbh-colour('lbh-f02');
+  }
+}

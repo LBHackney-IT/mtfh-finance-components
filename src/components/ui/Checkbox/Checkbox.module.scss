@@ -1,0 +1,13 @@
+@import 'src/theme';
+
+.wrapper {
+  & > p:first-of-type {
+    margin-bottom: 10px;
+  }
+}
+
+.description {
+  margin-top: 10px;
+  color: lbh-colour('lbh-border');
+  font-style: italic;
+}

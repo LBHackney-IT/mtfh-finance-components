@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert renders error alert 1`] = `
+<div>
+  <div
+    class="container error"
+  >
+    <div />
+    <h3
+      class="lbh-heading-h3 w600 text"
+    >
+      Alert
+    </h3>
+  </div>
+</div>
+`;
+
+exports[`Alert renders info alert 1`] = `
+<div>
+  <div
+    class="container info"
+  >
+    <div />
+    <h3
+      class="lbh-heading-h3 w600 text"
+    >
+      Alert
+    </h3>
+  </div>
+</div>
+`;
+
+exports[`Alert renders success alert 1`] = `
+<div>
+  <div
+    class="container success"
+  >
+    <div />
+    <h3
+      class="lbh-heading-h3 w600 text"
+    >
+      Alert
+    </h3>
+  </div>
+</div>
+`;

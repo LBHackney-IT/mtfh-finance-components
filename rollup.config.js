@@ -6,6 +6,11 @@ import resolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import packageJson from './package.json';
+import alias from '@rollup/plugin-alias';
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const rootPath = dirname(fileURLToPath(import.meta.url));
 
 // NOTE Has to use CJS for postcss plugin
 const autoImport = require('./autoImport')
@@ -26,6 +31,11 @@ export default [
       },
     ],
     plugins: [
+      alias({
+        entries: [
+          { find: '@assets', replacement: `${rootPath}/src/assets` },
+        ],
+      }),
       peerDepsExternal(),
       typescript({ tsconfig: './tsconfig.json' }),
       postcss({
