@@ -38,7 +38,7 @@ WithDescription.args = {
 };
 
 export const WithError = Template.bind({});
-WithDescription.args = {
+WithError.args = {
   name: 'name',
   label: 'Name',
   withError: true,

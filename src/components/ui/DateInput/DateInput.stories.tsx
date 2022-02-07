@@ -1,5 +1,4 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
-import { WithBorder } from '../Input/Input.stories';
 import DateInput from './DateInput';
 
 export default {
