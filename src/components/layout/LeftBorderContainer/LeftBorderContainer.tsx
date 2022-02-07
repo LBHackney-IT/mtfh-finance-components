@@ -12,7 +12,7 @@ type LeftBorderContainerProps = PropsWithChildren<{
 
 const LeftBorderContainer = ({
   enabled = true,
-  className = "",
+  className = '',
   hasError = false,
   children,
 }: LeftBorderContainerProps) => (
