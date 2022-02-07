@@ -18,4 +18,20 @@ describe('DateInput', () => {
 
     expect(content).toHaveClass('foo');
   });
+
+  it('renders with given label', () => {
+    render(<DateInput {...props} label="foo" />);
+
+    const content = screen.getByText('foo');
+
+    expect(content).toBeInTheDocument();
+  });
+
+  it('renders with given error message', () => {
+    render(<DateInput {...props} errorMessage="foo" />);
+
+    const content = screen.getByText('foo');
+
+    expect(content).toBeInTheDocument();
+  });
 });
