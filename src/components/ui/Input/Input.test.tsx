@@ -41,4 +41,12 @@ describe('Input', () => {
 
     expect(content).toBeInTheDocument();
   });
+
+  it('renders with disabled', () => {
+    render(<Input disabled />);
+
+    const content = screen.getByTestId('input');
+
+    expect(content).toHaveAttribute('disabled');
+  });
 });
