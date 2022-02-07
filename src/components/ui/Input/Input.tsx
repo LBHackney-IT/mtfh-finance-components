@@ -58,6 +58,7 @@ const Input = ({
       name={name}
       type="text"
       disabled={disabled}
+      data-testid="input"
       {...rest}
       {...register(name, validation)}
     />
