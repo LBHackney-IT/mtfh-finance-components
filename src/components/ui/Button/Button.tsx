@@ -31,7 +31,7 @@ const Button = ({
     disabled={disabled || isLoading}
   >
     <LoaderSpinner
-      className={styles.loader}
+      wrapperClass={styles.loader}
       visible={isLoading}
       type="ThreeDots"
       color="#00664f"
