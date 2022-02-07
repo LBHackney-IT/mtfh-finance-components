@@ -37,7 +37,7 @@ WithBorder.args = {
 };
 
 export const WithErrorMessage = Template.bind({});
-WithBorder.args = {
+WithErrorMessage.args = {
   ...base,
   errorMessage: 'This is the error',
 };
