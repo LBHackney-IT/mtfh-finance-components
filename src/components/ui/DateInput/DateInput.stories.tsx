@@ -10,7 +10,8 @@ export default {
 
 const Template: ComponentStory<typeof DateInput> = (args) => <DateInput {...args} />;
 
-const base = {
+export const Normal = Template.bind({});
+Normal.args = {
   label: 'Input field label',
   dateValues: {
     day: '04',
@@ -19,25 +20,35 @@ const base = {
   },
 };
 
-export const Normal = Template.bind({});
-Normal.args = {
-  ...base,
-};
-
 export const Disabled = Template.bind({});
 Disabled.args = {
-  ...base,
+  label: 'Input field label',
+  dateValues: {
+    day: '04',
+    month: '06',
+    year: '1989',
+  },
   disabled: true,
 };
 
 export const withBorder = Template.bind({});
 WithBorder.args = {
-  ...base,
+  label: 'Input field label',
+  dateValues: {
+    day: '04',
+    month: '06',
+    year: '1989',
+  },
   withBorder: true,
 };
 
 export const WithErrorMessage = Template.bind({});
 WithErrorMessage.args = {
-  ...base,
+  label: 'Input field label',
+  dateValues: {
+    day: '04',
+    month: '06',
+    year: '1989',
+  },
   errorMessage: 'This is the error',
 };
