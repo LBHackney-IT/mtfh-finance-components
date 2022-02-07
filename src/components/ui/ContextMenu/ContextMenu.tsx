@@ -15,9 +15,9 @@ import HorizontalDivider from '../HorizontalDivider';
 import styles from './ContextMenu.module.scss';
 
 type ContextMenuOption = {
-  icon: ReactNode;
-  label: string;
-  onClick: () => void;
+  icon?: ReactNode;
+  label?: string;
+  onClick?: () => void;
 };
 
 type ContextMenuProps = {
