@@ -1,0 +1,17 @@
+@import 'src/theme';
+
+.hint {
+  display: flex;
+  align-items: center;
+
+  svg {
+    margin-right: 20px;
+  }
+
+  p {
+    font-size: 19px;
+    font-weight: 300;
+    color: $lbh-text-colour;
+    word-break: break-word;
+  }
+}

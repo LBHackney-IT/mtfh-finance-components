@@ -101,20 +101,20 @@ BodyXs.args = {
 
 export const Weight300 = Template.bind({});
 Weight300.args = {
-  weight: 300
+  weight: 300,
 };
 
 export const Weight400 = Template.bind({});
 Weight400.args = {
-  weight: 400
+  weight: 400,
 };
 
 export const Weight600 = Template.bind({});
 Weight600.args = {
-  weight: 600
+  weight: 600,
 };
 
 export const Weight700 = Template.bind({});
 Weight700.args = {
-  weight: 700
+  weight: 700,
 };

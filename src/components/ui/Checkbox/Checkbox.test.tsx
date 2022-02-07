@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event'
+import userEvent from '@testing-library/user-event';
 
 import Checkbox from './index';
 
@@ -41,15 +41,15 @@ describe('Checkbox', () => {
     render(<Checkbox withBorder {...args} />);
 
     const element = screen.getByTestId('left-border-container');
-        
-    expect(element).toHaveClass('container')
+
+    expect(element).toHaveClass('container');
   });
-    
+
   it('updates checked onClick', () => {
     render(<Checkbox {...args} />);
 
     const element: HTMLInputElement = screen.getByTestId('checkbox');
-        
+
     userEvent.click(element);
 
     expect(element).toBeChecked();

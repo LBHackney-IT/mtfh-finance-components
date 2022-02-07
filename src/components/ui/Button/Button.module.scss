@@ -1,0 +1,29 @@
+@use 'sass:color';
+@import 'src/theme';
+
+%button {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+
+.normal:global(.govuk-button):global(.lbh-button) {
+  @extend %button;
+}
+
+.danger:global(.lbh-button) {
+  @extend %button;
+
+  background: lbh-colour('lbh-f03');
+
+  &:hover {
+    background: color.adjust(lbh-colour('lbh-f03'), $lightness: -10%) !important;
+  }
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+}
