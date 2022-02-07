@@ -30,7 +30,7 @@ Disabled.args = {
   disabled: true,
 };
 
-export const withBorder = Template.bind({});
+export const WithBorder = Template.bind({});
 WithBorder.args = {
   label: 'Input field label',
   dateValues: {
