@@ -1,6 +1,6 @@
 import { memo } from 'react';
 
-import { useGetAssetInfo } from '@store';
+import { useGetAssetInfo } from '../../../store';
 import { getAddress, formatPercent } from '../../../helpers';
 
 import HeaderBlock from '../HeaderBlock';
