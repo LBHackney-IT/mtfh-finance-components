@@ -39,6 +39,7 @@
     "lbh-frontend": "^3.6.1",
     "luxon": "2.3.0",
     "react-loader-spinner": "4.0.0",
+    "react-redux": "7.2.6",
     "react-use": "17.3.2"
   },
   "peerDependencies": {
