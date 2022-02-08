@@ -58,3 +58,5 @@ export const useDateInput = () => {
     reset,
   };
 };
+
+export default useDateInput;

@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 
 import { renderHook } from '@testing-library/react-hooks';
 
-import { useTabs } from './index';
+import { useTabs, useDateInput } from './index';
 
 const components = {
   Block: 'block',
@@ -31,6 +31,23 @@ describe('useTabs', () => {
       changeTab: setStateMock,
       currentTab: 'Block',
       tabs: ['Block', 'Estate'],
+    });
+  });
+});
+
+describe('useDateInput', () => {
+  it('returns correct props', () => {
+    // REF https://stackoverflow.com/questions/45644098/testing-anonymous-function-equality-with-jest
+    const setStateMock = expect.any(Function);
+    const { result } = renderHook(() => useDateInput());
+
+    expect(result.current).toEqual({
+      dateValues: { day: '', month: '', year: '' },
+      onChange: setStateMock,
+      resultDate: null,
+      isFilled: false,
+      isPartiallyEmpty: false,
+      reset: setStateMock,
     });
   });
 });

@@ -26,7 +26,6 @@ type ContextMenuProps = {
   testId?: string | null;
 };
 
-//  <MoreIcon />
 const ContextMenu = ({ options, trigger, testId = null }: ContextMenuProps) => {
   const [isOpen, toggle] = useToggle(false);
 

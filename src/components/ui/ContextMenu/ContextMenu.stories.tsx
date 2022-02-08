@@ -29,5 +29,4 @@ Normal.args = {
     },
   ],
   icon: <MoreIcon />,
-  testId: '',
 };

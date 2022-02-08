@@ -52,3 +52,12 @@ WithBorder.args = {
   withBorder: true,
   ...base,
 };
+
+export const WithBorderAndError = Template.bind({});
+WithBorderAndError.args = {
+  name: 'name',
+  label: 'Name',
+  withBorder: true,
+  withError: true,
+  ...base,
+};
