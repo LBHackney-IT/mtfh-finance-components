@@ -1,0 +1,38 @@
+@import 'src/theme';
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.icon {
+  margin-bottom: 30px;
+
+  path {
+    fill: lbh-colour('lbh-black');
+  }
+}
+
+.summary {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 80%;
+
+  &.withMaxWidth {
+    max-width: 700px;
+  }
+}
+
+.summaryWrapper {
+  font-size: 20px;
+  line-height: 26px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-right: 60px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
