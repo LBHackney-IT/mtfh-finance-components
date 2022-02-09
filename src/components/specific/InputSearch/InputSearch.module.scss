@@ -1,0 +1,22 @@
+.inputContainer {
+  display: flex;
+  width: 100%;
+  margin-bottom: 30px;
+
+  .input {
+    flex: 1;
+    margin-right: 30px;
+  }
+
+  & > div {
+    width: calc(100% - 200px);
+  }
+
+  input {
+    height: 42px;
+  }
+
+  .button {
+    height: 40px;
+  }
+}
