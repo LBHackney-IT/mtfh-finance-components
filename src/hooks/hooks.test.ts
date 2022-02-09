@@ -1,6 +1,3 @@
-import React from 'react';
-import type { ReactNode } from 'react';
-
 import { renderHook, act } from '@testing-library/react-hooks';
 
 import { useTabs, useDateInput } from './index';
@@ -18,12 +15,8 @@ describe('useTabs', () => {
   });
 
   it('returns correct tabsProps', () => {
-    const setStateMock = jest.fn();
-    const useStateMock = (state: ReactNode) => [state, setStateMock];
-
-    // FIXME Type declaration for jest doesnt match with an original useState
-    //  @ts-ignore
-    jest.spyOn(React, 'useState').mockImplementation(useStateMock);
+    // REF https://stackoverflow.com/questions/45644098/testing-anonymous-function-equality-with-jest
+    const setStateMock = expect.any(Function);
 
     const { result } = renderHook(() => useTabs(components));
 
@@ -69,5 +62,21 @@ describe('useDateInput', () => {
     });
 
     expect(result.current.isFilled).toBe(true);
+    expect(result.current.isPartiallyEmpty).toBe(false);
+  });
+
+  it('return true for isPartiallyEmpty when not all field is filled', () => {
+    const { result } = renderHook(() => useDateInput());
+
+    act(() => {
+      result.current.onChange({
+        target: {
+          name: 'day',
+          value: '03',
+        },
+      });
+    });
+
+    expect(result.current.isPartiallyEmpty).toBe(true);
   });
 });
