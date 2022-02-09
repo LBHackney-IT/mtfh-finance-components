@@ -30,14 +30,15 @@ const Button = ({
     className={classnames('govuk-button lbh-button', styles[variant], className)}
     disabled={disabled || isLoading}
   >
-    <LoaderSpinner
-      wrapperClass={styles.loader}
-      visible={isLoading}
-      type="ThreeDots"
-      color="#00664f"
-      width={28}
-      height={28}
-    />
+    <div className={styles.loader}>
+      <LoaderSpinner
+        visible={isLoading}
+        type="ThreeDots"
+        color="#00664f"
+        width={28}
+        height={28}
+      />
+    </div>
 
     {!isLoading && children}
   </button>

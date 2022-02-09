@@ -7,15 +7,15 @@ import Pressable from '../Pressable';
 import styles from './Link.module.scss';
 
 type LinkProps = PropsWithChildren<{
-    href?: string,
-    className?: string | null,
-}>
+  href: string;
+  className?: string;
+}>;
 
-const Link = ({ href, className, children }: LinkProps) => (
+const Link = ({ href, className = '', children }: LinkProps) => (
   <NextLink href={href}>
-    <a className={styles.link}>
+    <span className={styles.link}>
       <Pressable className={className}>{children}</Pressable>
-    </a>
+    </span>
   </NextLink>
 );
 
