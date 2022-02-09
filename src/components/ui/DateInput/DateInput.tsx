@@ -13,13 +13,18 @@ type DateValues = {
   year: string;
 };
 
+type OnChangeTarget = {
+  name: string;
+  value: string;
+};
+
 type DateInputProps = {
   label?: string;
   className?: string;
   disabled?: boolean;
   errorMessage?: string;
   withBorder?: boolean;
-  onChange: () => void;
+  onChange: ({ target }: { target: OnChangeTarget }) => void;
   dateValues: DateValues;
 };
 
@@ -39,7 +44,7 @@ const DateInput = ({
         name={name}
         classNameContainer="mt-0"
         classNameInput={name === 'year' ? styles.yearInput : styles.commonInput}
-        value={dateValues[name]}
+        value={dateValues[name as keyof DateValues] as string}
         onChange={onChange}
         disabled={disabled}
         withError={Boolean(errorMessage)}

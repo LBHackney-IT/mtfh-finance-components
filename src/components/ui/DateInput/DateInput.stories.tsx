@@ -11,9 +11,7 @@ export default {
 const Template: ComponentStory<typeof DateInput> = (args) => {
   const { dateValues, onChange } = useDateInput();
 
-  console.log('check value', dateValues, onChange.toString());
-
-  return <DateInput dateValues={dateValues} onChange={onChange} {...args} />;
+  return <DateInput {...args} dateValues={dateValues} onChange={onChange} />;
 };
 
 export const Normal = Template.bind({});

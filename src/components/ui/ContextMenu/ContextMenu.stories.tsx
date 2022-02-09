@@ -1,6 +1,5 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import ContextMenu from './ContextMenu';
-import MoreIcon from '../../../assets/more.svg';
 import HomeIcon from '../../../assets/home.svg';
 import GarageIcon from '../../../assets/garage.svg';
 
@@ -28,5 +27,4 @@ Normal.args = {
       onClick: () => {},
     },
   ],
-  icon: <MoreIcon />,
 };

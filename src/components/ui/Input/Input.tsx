@@ -8,13 +8,20 @@ import styles from './Input.module.scss';
 
 type ValidationSchema = {};
 
+type OnChangeTarget = {
+  name: string;
+  value: string;
+};
+
 type InputProps = {
   name?: string;
   label?: string | null;
-  classNameContainer?: string | null;
-  classNameInput?: string | null;
+  value?: string;
+  onChange?: ({ target }: { target: OnChangeTarget }) => void;
+  classNameContainer?: string;
+  classNameInput?: string;
   errorMessage?: string;
-  register?: () => void;
+  register?: (name: string, validation: ValidationSchema) => void;
   validation?: ValidationSchema;
   withBorder?: boolean;
   withError?: boolean;
@@ -25,8 +32,8 @@ type InputProps = {
 const Input = ({
   label = null,
   name = '',
-  classNameContainer = null,
-  classNameInput = null,
+  classNameContainer = '',
+  classNameInput = '',
   register = () => {}, // for usage with react-hook-form
   validation = {},
   errorMessage = '',
