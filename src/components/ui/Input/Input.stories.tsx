@@ -59,5 +59,6 @@ WithBorderAndError.args = {
   label: 'Name',
   withBorder: true,
   withError: true,
+  errorMessage: 'This is the error message',
   ...base,
 };
