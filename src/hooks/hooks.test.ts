@@ -1,7 +1,7 @@
 import React from 'react';
 import type { ReactNode } from 'react';
 
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook, act } from '@testing-library/react-hooks';
 
 import { useTabs, useDateInput } from './index';
 
@@ -36,18 +36,38 @@ describe('useTabs', () => {
 });
 
 describe('useDateInput', () => {
-  it('returns correct props', () => {
-    // REF https://stackoverflow.com/questions/45644098/testing-anonymous-function-equality-with-jest
-    const setStateMock = expect.any(Function);
+  // NOTE Update in testing library doesnt work
+  // REF https://react-hooks-testing-library.com/usage/basic-hooks#updates
+  it('return true for isFilled when all field is filled', () => {
     const { result } = renderHook(() => useDateInput());
 
-    expect(result.current).toEqual({
-      dateValues: { day: '', month: '', year: '' },
-      onChange: setStateMock,
-      resultDate: null,
-      isFilled: false,
-      isPartiallyEmpty: false,
-      reset: setStateMock,
+    act(() => {
+      result.current.onChange({
+        target: {
+          name: 'day',
+          value: '03',
+        },
+      });
     });
+
+    act(() => {
+      result.current.onChange({
+        target: {
+          name: 'month',
+          value: '02',
+        },
+      });
+    });
+
+    act(() => {
+      result.current.onChange({
+        target: {
+          name: 'year',
+          value: '2000',
+        },
+      });
+    });
+
+    expect(result.current.isFilled).toBe(true);
   });
 });
