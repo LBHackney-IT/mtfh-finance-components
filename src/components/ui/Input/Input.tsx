@@ -1,5 +1,6 @@
 import classnames from 'classnames';
 
+import type { UseFormRegister } from 'react-hook-form';
 import Typography from '../Typography';
 import ErrorMessage from '../ErrorMessage';
 import LeftBorderContainer from '../../layout/LeftBorderContainer';
@@ -21,7 +22,7 @@ type InputProps = {
   classNameContainer?: string;
   classNameInput?: string;
   errorMessage?: string;
-  register?: (name: string, validation: ValidationSchema) => void;
+  register?: UseFormRegister<{ [key: string]: string }>;
   validation?: ValidationSchema;
   withBorder?: boolean;
   withError?: boolean;
@@ -34,7 +35,7 @@ const Input = ({
   name = '',
   classNameContainer = '',
   classNameInput = '',
-  register = () => {}, // for usage with react-hook-form
+  register,
   validation = {},
   errorMessage = '',
   withBorder = false,
@@ -62,12 +63,11 @@ const Input = ({
         [styles.disabled]: disabled,
       })}
       id={name}
-      name={name}
       type="text"
       disabled={disabled}
       data-testid="input"
       {...rest}
-      {...register(name, validation)}
+      {...(register && register(name, validation))}
     />
 
     {description && (
