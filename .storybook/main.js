@@ -17,5 +17,13 @@ module.exports = {
     builder: 'webpack5',
   },
   // REF https://github.com/storybookjs/storybook/issues/15336
-  typescript: { reactDocgen: true },
+  typescript: {
+    reactDocgen: 'react-docgen-typescript',
+    reactDocgenTypescriptOptions: {
+      compilerOptions: {
+        allowSyntheticDefaultImports: false,
+        esModuleInterop: false,
+      },
+    },
+  },
 };
