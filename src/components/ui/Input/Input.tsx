@@ -1,4 +1,5 @@
 import classnames from 'classnames';
+import type { ChangeEvent } from 'react';
 
 import type { UseFormRegister } from 'react-hook-form';
 import Typography from '../Typography';
@@ -9,16 +10,11 @@ import styles from './Input.module.scss';
 
 type ValidationSchema = {};
 
-type OnChangeTarget = {
-  name: string;
-  value: string;
-};
-
 type InputProps = {
   name?: string;
   label?: string | null;
   value?: string;
-  onChange?: ({ target }: { target: OnChangeTarget }) => void;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
   classNameContainer?: string;
   classNameInput?: string;
   errorMessage?: string;

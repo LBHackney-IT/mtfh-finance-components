@@ -1,4 +1,5 @@
 import { memo, useCallback } from 'react';
+import type { ChangeEvent } from 'react';
 
 import Input from '../Input';
 import Typography from '../Typography';
@@ -13,18 +14,13 @@ type DateValues = {
   year: string;
 };
 
-type OnChangeTarget = {
-  name: string;
-  value: string;
-};
-
 type DateInputProps = {
   label?: string;
   className?: string;
   disabled?: boolean;
   errorMessage?: string;
   withBorder?: boolean;
-  onChange: ({ target }: { target: OnChangeTarget }) => void;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
   dateValues: DateValues;
 };
 
