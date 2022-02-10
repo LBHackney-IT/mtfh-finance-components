@@ -7,14 +7,12 @@ export default {
   argTypes: {},
 } as ComponentMeta<typeof FileInput>;
 
-const Template: ComponentStory<typeof FileInput> = (args) => (
-    <FileInput {...args}/>
-);
+const Template: ComponentStory<typeof FileInput> = (args) => <FileInput {...args} />;
 
 export const Normal = Template.bind({});
 Normal.args = {
-    id: "id",
-    name: "file",
-    register: (name: string) => {},
-    label: "This is label"
+  id: 'id',
+  name: 'file',
+  register: () => {},
+  label: 'This is label',
 };

@@ -11,8 +11,8 @@ const Template: ComponentStory<typeof Popup> = (args) => <Popup {...args} />;
 
 export const Normal = Template.bind({});
 Normal.args = {
-    trigger: "Hover me",
-    bottomText: "This is the bottom text",
-    topText: "This is the top text",
-    goTo: "/home"
+  trigger: 'Hover me',
+  bottomText: 'This is the bottom text',
+  topText: 'This is the top text',
+  goTo: '/home',
 };

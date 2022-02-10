@@ -6,13 +6,18 @@ import Typography from '../Typography';
 import styles from './FileInput.module.scss';
 
 type FileInputProps = {
-    id: string,
-    name: string,
-    register: (name: string) => void,
-    label?: string
+  id: string;
+  name: string;
+  register: (name: string) => void;
+  label?: string;
 };
 
-const FileInput = ({ id, name, register, label = "Upload file(s)" }: FileInputProps) => (
+const FileInput = ({
+  id,
+  name,
+  register,
+  label = 'Upload file(s)',
+}: FileInputProps) => (
   <label className={classnames('govuk-label lbh-label', styles.label)} htmlFor={id}>
     <Typography variant="h3">{label}</Typography>
 
@@ -26,6 +31,5 @@ const FileInput = ({ id, name, register, label = "Upload file(s)" }: FileInputPr
     />
   </label>
 );
-
 
 export default memo(FileInput);

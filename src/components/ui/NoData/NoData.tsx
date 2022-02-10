@@ -3,10 +3,10 @@ import { memo } from 'react';
 import Typography from '../Typography';
 
 type NoDataProps = {
-    className?: string
+  className?: string;
 };
 
-const NoData = ({ className = "" }: NoDataProps) => (
+const NoData = ({ className = '' }: NoDataProps) => (
   <Typography variant="h4" className={className}>
     No results
   </Typography>

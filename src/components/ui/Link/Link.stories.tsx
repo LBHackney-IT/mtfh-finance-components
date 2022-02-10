@@ -8,13 +8,11 @@ export default {
 } as ComponentMeta<typeof Link>;
 
 const Template: ComponentStory<typeof Link> = (args) => (
-    <Link {...args}>
-        Link Name
-    </Link>
+  <Link {...args}>Link Name</Link>
 );
 
 export const Normal = Template.bind({});
 Normal.args = {
   className: '',
-  href: "/about-us"
+  href: '/about-us',
 };

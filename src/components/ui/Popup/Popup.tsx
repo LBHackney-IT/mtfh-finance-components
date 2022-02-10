@@ -11,15 +11,21 @@ import Typography from '../Typography';
 import styles from './Popup.module.scss';
 
 type PopupProps = {
-    trigger: ReactNode,
-    bottomText: string,
-    topText: string,
-    goTo: string
+  trigger: ReactNode;
+  bottomText: string;
+  topText: string;
+  goTo: string;
 };
 
 const Popup = ({ trigger, topText, bottomText, goTo }: PopupProps) => {
   const tooltip = (
-    <a target="_blank" className={styles.inner} rel="noopener noreferrer" href={goTo} data-testid="tooltip">
+    <a
+      target="_blank"
+      className={styles.inner}
+      rel="noopener noreferrer"
+      href={goTo}
+      data-testid="tooltip"
+    >
       <div className={styles.text}>
         <Typography size="s" weight={700}>
           {topText}
@@ -36,6 +42,7 @@ const Popup = ({ trigger, topText, bottomText, goTo }: PopupProps) => {
       arrow
       title={tooltip}
       placement="top"
+      open
       classes={{
         tooltip: styles.content,
         arrow: styles.arrow,

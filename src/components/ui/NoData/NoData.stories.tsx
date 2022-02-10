@@ -7,9 +7,7 @@ export default {
   argTypes: {},
 } as ComponentMeta<typeof NoData>;
 
-const Template: ComponentStory<typeof NoData> = (args) => (
-    <NoData {...args}/>
-);
+const Template: ComponentStory<typeof NoData> = (args) => <NoData {...args} />;
 
 export const Normal = Template.bind({});
 Normal.args = {
