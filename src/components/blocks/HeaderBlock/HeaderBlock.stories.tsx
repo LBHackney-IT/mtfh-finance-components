@@ -2,7 +2,7 @@ import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import HeaderBlock from './HeaderBlock';
 
 export default {
-  title: 'Block/HeaderBlock',
+  title: 'Blocks/HeaderBlock',
   component: HeaderBlock,
   argTypes: {},
 } as ComponentMeta<typeof HeaderBlock>;
