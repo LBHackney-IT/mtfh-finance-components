@@ -1,22 +1,26 @@
-import { customRender, screen } from '../../../helpers/test-utils';
+import { render, screen } from '@testing-library/react';
+import Modal from 'react-modal';
 
 import OverlayModal from './index';
 
 describe('OverlayModal', () => {
   it('if open correctly shows children', () => {
-    customRender(<OverlayModal isOpen>content</OverlayModal>);
+    Modal.setAppElement(document.body);
+    render(<OverlayModal isOpen>content</OverlayModal>);
 
     expect(screen.getByText('content')).toBeInTheDocument();
   });
 
   it('blocks body', () => {
-    customRender(<OverlayModal isOpen>content</OverlayModal>);
+    Modal.setAppElement(document.body);
+    render(<OverlayModal isOpen>content</OverlayModal>);
 
     expect(document.body).toHaveStyle({ overflow: 'hidden' });
   });
 
   it('appends className', () => {
-    customRender(
+    Modal.setAppElement(document.body);
+    render(
       <OverlayModal isOpen className="testClassName">
         content
       </OverlayModal>
