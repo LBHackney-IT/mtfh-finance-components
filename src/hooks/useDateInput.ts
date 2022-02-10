@@ -1,4 +1,5 @@
 import { useCallback, useMemo, useState } from 'react';
+import type { ChangeEvent } from 'react';
 
 import { DateTime } from 'luxon';
 
@@ -13,7 +14,7 @@ export const initialDateInputState = {
 export const useDateInput = () => {
   const [dateValues, setDates] = useState(initialDateInputState);
 
-  const onChange = useCallback(({ target }) => {
+  const onChange = useCallback(({ target }: ChangeEvent<HTMLInputElement>) => {
     const { value, name } = target;
 
     if (value.match(ONLY_DIGITS_REGEX)) {

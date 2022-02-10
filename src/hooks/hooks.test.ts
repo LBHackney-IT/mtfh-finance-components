@@ -1,5 +1,5 @@
 import { renderHook, act } from '@testing-library/react-hooks';
-
+import type { ChangeEvent } from 'react';
 import { useTabs, useDateInput } from './index';
 
 const components = {
@@ -40,7 +40,7 @@ describe('useDateInput', () => {
           name: 'day',
           value: '03',
         },
-      });
+      } as ChangeEvent<HTMLInputElement>);
     });
 
     act(() => {
@@ -49,7 +49,7 @@ describe('useDateInput', () => {
           name: 'month',
           value: '02',
         },
-      });
+      } as ChangeEvent<HTMLInputElement>);
     });
 
     act(() => {
@@ -58,7 +58,7 @@ describe('useDateInput', () => {
           name: 'year',
           value: '2000',
         },
-      });
+      } as ChangeEvent<HTMLInputElement>);
     });
 
     expect(result.current.isFilled).toBe(true);
@@ -74,7 +74,7 @@ describe('useDateInput', () => {
           name: 'day',
           value: '03',
         },
-      });
+      } as ChangeEvent<HTMLInputElement>);
     });
 
     expect(result.current.isPartiallyEmpty).toBe(true);
@@ -89,7 +89,7 @@ describe('useDateInput', () => {
           name: 'day',
           value: '03',
         },
-      });
+      } as ChangeEvent<HTMLInputElement>);
     });
 
     expect(result.current.resultDate).toBe(null);
@@ -104,21 +104,21 @@ describe('useDateInput', () => {
           name: 'day',
           value: '03',
         },
-      });
+      } as ChangeEvent<HTMLInputElement>);
 
       result.current.onChange({
         target: {
           name: 'month',
           value: '03',
         },
-      });
+      } as ChangeEvent<HTMLInputElement>);
 
       result.current.onChange({
         target: {
           name: 'year',
           value: '2000',
         },
-      });
+      } as ChangeEvent<HTMLInputElement>);
     });
 
     expect(result.current.resultDate).toBe('2000-03-03T00:00:00.000');
