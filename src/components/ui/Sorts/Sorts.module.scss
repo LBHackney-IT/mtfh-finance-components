@@ -1,0 +1,34 @@
+@import 'src/styles/theme';
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px 20px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  height: 38px;
+  padding-right: 9px;
+  padding-left: 15px;
+  border: 1px solid lbh-colour('lbh-a01');
+  border-radius: 50px;
+
+  p {
+    margin-right: 6px;
+  }
+
+  &:hover p {
+    text-decoration: none;
+  }
+
+  &.active {
+    background-color: lbh-colour('lbh-a01');
+
+    p {
+      color: lbh-colour('lbh-text-white');
+    }
+  }
+}
