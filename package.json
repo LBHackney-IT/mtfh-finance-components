@@ -34,11 +34,13 @@
   "dependencies": {
     "@emotion/react": "11.7.1",
     "@mui/material": "5.3.1",
+    "@reduxjs/toolkit": "1.7.2",
     "classnames": "^2.3.1",
     "lbh-frontend": "^3.6.1",
     "luxon": "2.3.0",
     "react-loader-spinner": "4.0.0",
-    "react-modal": "3.14.2",
+    "react-modal": "3.14.4",
+    "react-redux": "7.2.6",
     "react-use": "17.3.2"
   },
   "peerDependencies": {
