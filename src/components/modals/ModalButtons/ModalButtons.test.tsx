@@ -11,9 +11,9 @@ describe('ModalButtons', () => {
   });
 
   it('renders with given cancel text', () => {
-    render(<ModalButtons confirmText="Cancel" />);
+    render(<ModalButtons confirmText="cancel" />);
 
-    const content = screen.getByText('Cancel');
+    const content = screen.getByText('cancel');
 
     expect(content).toBeInTheDocument();
   });

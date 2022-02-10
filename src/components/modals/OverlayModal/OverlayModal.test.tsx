@@ -1,4 +1,4 @@
-import { customRender, screen } from '@helpers/test-utils';
+import { customRender, screen } from '../../../helpers/test-utils';
 
 import OverlayModal from './index';
 

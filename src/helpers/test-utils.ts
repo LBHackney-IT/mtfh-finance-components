@@ -9,12 +9,7 @@ Modal.setAppElement(document.body);
 
 // eslint-disable-next-line react/prop-types
 const AllTheProviders = ({ children, initialState }) => (
-  <Provider
-    store={configureStore({
-      reducer: {},
-      preloadedState: initialState,
-    })}
-  >
+  <Provider store={configureStore({ reducer: {}, preloadedState: initialState })}>
     {children}
   </Provider>
 );
