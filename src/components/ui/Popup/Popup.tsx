@@ -42,7 +42,6 @@ const Popup = ({ trigger, topText, bottomText, goTo }: PopupProps) => {
       arrow
       title={tooltip}
       placement="top"
-      open
       classes={{
         tooltip: styles.content,
         arrow: styles.arrow,

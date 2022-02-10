@@ -35,8 +35,8 @@ const Button = ({
       visible={isLoading}
       type="ThreeDots"
       color="#00664f"
-      width={28}
-      height={28}
+      width={23}
+      height={23}
     />
 
     {!isLoading && children}
