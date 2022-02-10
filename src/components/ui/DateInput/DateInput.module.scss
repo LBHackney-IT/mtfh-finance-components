@@ -1,0 +1,17 @@
+.inputsWrapper {
+  display: flex;
+}
+
+.commonInput {
+  max-width: 43px;
+  margin-right: 10px;
+}
+
+.yearInput {
+  max-width: 66px;
+  margin-right: 10px;
+}
+
+.error {
+  margin-bottom: 5px;
+}
