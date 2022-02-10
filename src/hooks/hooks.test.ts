@@ -65,7 +65,7 @@ describe('useDateInput', () => {
     expect(result.current.isPartiallyEmpty).toBe(false);
   });
 
-  it('return true for isPartiallyEmpty when not all field is filled', () => {
+  it('return true for isPartiallyEmpty when not all field are filled', () => {
     const { result } = renderHook(() => useDateInput());
 
     act(() => {
@@ -78,5 +78,49 @@ describe('useDateInput', () => {
     });
 
     expect(result.current.isPartiallyEmpty).toBe(true);
+  });
+
+  it('return null for resultDate when not all fields are filled', () => {
+    const { result } = renderHook(() => useDateInput());
+
+    act(() => {
+      result.current.onChange({
+        target: {
+          name: 'day',
+          value: '03',
+        },
+      });
+    });
+
+    expect(result.current.resultDate).toBe(null);
+  });
+
+  it('return result date when not all fields are filled', () => {
+    const { result } = renderHook(() => useDateInput());
+
+    act(() => {
+      result.current.onChange({
+        target: {
+          name: 'day',
+          value: '03',
+        },
+      });
+
+      result.current.onChange({
+        target: {
+          name: 'month',
+          value: '03',
+        },
+      });
+
+      result.current.onChange({
+        target: {
+          name: 'year',
+          value: '2000',
+        },
+      });
+    });
+
+    expect(result.current.resultDate).toBe('2000-03-03T00:00:00.000');
   });
 });
