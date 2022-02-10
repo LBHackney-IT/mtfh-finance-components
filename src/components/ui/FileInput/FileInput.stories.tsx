@@ -13,6 +13,5 @@ export const Normal = Template.bind({});
 Normal.args = {
   id: 'id',
   name: 'file',
-  register: () => {},
   label: 'This is label',
 };

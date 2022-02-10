@@ -1,5 +1,6 @@
 import { memo } from 'react';
 import classnames from 'classnames';
+import type { UseFormRegister } from 'react-hook-form';
 
 import Typography from '../Typography';
 
@@ -8,7 +9,7 @@ import styles from './FileInput.module.scss';
 type FileInputProps = {
   id: string;
   name: string;
-  register: (name: string) => void;
+  register?: UseFormRegister<{ [key: string]: string }>;
   label?: string;
 };
 
@@ -22,7 +23,7 @@ const FileInput = ({ id, name, register, label, ...rest }: FileInputProps) => (
       type="file"
       className={classnames('govuk-file-upload lbh-file-upload', styles.input)}
       {...rest}
-      {...register(name)}
+      {...(register && register(name))}
       data-testid="file-input"
     />
   </label>

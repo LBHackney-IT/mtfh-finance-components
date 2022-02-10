@@ -5,7 +5,6 @@ describe('FileInput', () => {
   const args = {
     id: 'id',
     name: 'file',
-    register: () => {},
   };
 
   it('renders with given label', () => {
