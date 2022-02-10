@@ -1,0 +1,38 @@
+@import 'src/theme';
+
+.wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tooltipWrapper {
+  min-width: 246px;
+  padding: 20px;
+  background-color: $lbh-body-background-colour;
+  filter: drop-shadow(0 8px 16px rgb(0 0 0 / 8%));
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: lbh-colour('lbh-secondary-text');
+
+  svg {
+    cursor: pointer;
+  }
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+
+  svg {
+    margin-right: 22px;
+  }
+}
+
+.tooltip {
+  padding: 0 !important;
+}

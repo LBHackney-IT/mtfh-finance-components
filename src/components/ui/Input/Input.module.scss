@@ -1,0 +1,15 @@
+@import 'src/theme';
+
+.error:global(.govuk-error-message) {
+  margin-bottom: 5px;
+}
+
+.description {
+  margin-top: 10px;
+  color: lbh-colour('lbh-border');
+  font-style: italic;
+}
+
+.disabled {
+  background-color: lbh-colour('lbh-secondary-disabled');
+}
