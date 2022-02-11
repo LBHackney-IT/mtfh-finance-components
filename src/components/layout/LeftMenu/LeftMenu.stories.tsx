@@ -11,24 +11,6 @@ export default {
 
 const Template: ComponentStory<typeof LeftMenu> = (args) => <LeftMenu {...args} />;
 
-export const AnchorLink = Template.bind({});
-AnchorLink.args = {
-  regularLinks: [
-    {
-      buttonProps: {
-        text: 'First link',
-      },
-      id: 23,
-    },
-    {
-      buttonProps: {
-        text: 'Second link',
-      },
-      id: 24,
-    },
-  ],
-};
-
 export const PageLink = Template.bind({});
 PageLink.args = {
   regularLinks: [

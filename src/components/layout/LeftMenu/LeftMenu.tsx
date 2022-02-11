@@ -22,18 +22,17 @@ type PageLink = {
   additionalComponent?: ReactNode;
 };
 
-type PageButton = {
+type Separator = {
   id: number;
-  buttonProps: Omit<LinkButtonProps, 'route'>;
 };
 
 type LeftMenuProps = {
-  regularLinks: Array<PageButton | PageLink>;
+  regularLinks: Array<Separator | PageLink>;
   pageSpecificLinks?: ReactNode;
 };
 
-function isPageLink(x: PageLink | PageButton): x is PageLink {
-  return (x as PageLink).icon === undefined;
+function isPageLink(x: PageLink | Separator): x is PageLink {
+  return (x as PageLink).icon !== undefined;
 }
 
 const LeftMenu = ({ regularLinks, pageSpecificLinks }: LeftMenuProps) => {

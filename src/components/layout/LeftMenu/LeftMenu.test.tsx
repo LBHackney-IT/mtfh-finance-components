@@ -22,21 +22,18 @@ describe('LeftMenu', () => {
     expect(content).toBeInTheDocument();
   });
 
-  it('renders with given page button', () => {
+  it('renders separators when given id', () => {
     const args = {
       regularLinks: [
         {
           id: 100,
-          buttonProps: {
-            text: 'btn',
-          },
         },
       ],
     };
 
     render(<LeftMenu {...args} />);
 
-    const content = screen.getByText('btn');
+    const content = screen.getByTestId('horizontal-divider');
 
     expect(content).toBeInTheDocument();
   });
