@@ -1,4 +1,6 @@
-export const range = (from, to) => {
+import type { PaginationOptions } from './constants'
+
+export const range = (from: number, to: number): Array<number> => {
   const step = 1;
 
   let i = from;
@@ -12,9 +14,11 @@ export const range = (from, to) => {
   return result;
 };
 
-export const DOTS = 'DOTS';
+export const DOTS = 'DOTS' as const;
 
-export const getPageNumbers = ({ pageCount, currentPage }) => {
+type OmittedPage = { key: 'left' | 'right', value: 'DOTS' }
+
+export const getPageNumbers = ({ pageCount, currentPage }: Omit<PaginationOptions, "pageSize" | "totalCount" | "onPageChange">): Array<number | OmittedPage> => {
   const pageNeighbours = 1;
   const totalNumbers = pageNeighbours * 2 + 3;
   const totalBlocks = totalNumbers + 2;
@@ -37,8 +41,8 @@ export const getPageNumbers = ({ pageCount, currentPage }) => {
     const leftSpill = startPage > 2;
     const rightSpill = endPage < beforeLastPage;
 
-    const leftSpillPage = { value: DOTS, key: 'left' };
-    const rightSpillPage = { value: DOTS, key: 'right' };
+    const leftSpillPage = { value: DOTS, key: 'left' as const };
+    const rightSpillPage = { value: DOTS, key: 'right' as const };
 
     if (leftSpill && !rightSpill) {
       const extraPages = range(startPage - singleSpillOffset, startPage - 1);

@@ -1,11 +1,12 @@
 import { forwardRef, memo } from 'react';
-import type { PropsWithChildren } from 'react';
+import type { PropsWithChildren, KeyboardEvent, MouseEvent } from 'react';
 import classnames from 'classnames';
 import styles from './Pressable.module.scss';
 
 type PressableProps = PropsWithChildren<{
   className?: string;
-  onClick?: () => void;
+  onClick?: (e: MouseEvent) => void;
+  onKeyDown?: (e: KeyboardEvent<HTMLButtonElement>) => void;
 }>;
 
 const Pressable = forwardRef<HTMLButtonElement, PressableProps>(
