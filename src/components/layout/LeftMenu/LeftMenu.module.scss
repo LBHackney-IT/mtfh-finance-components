@@ -1,0 +1,41 @@
+@import 'src/theme';
+
+.menu {
+  position: sticky;
+  top: 0;
+  overflow: auto;
+  min-width: 320px;
+  height: 100vh;
+  padding: 60px 0;
+  background-color: lbh-colour('lbh-grey-4');
+}
+
+.link {
+  flex: 1;
+  margin-left: 20px;
+  text-align: left;
+}
+
+.regularLinksWrapper {
+  margin-top: 20px;
+  padding: 0 30px;
+}
+
+.hackneyLogo {
+  box-sizing: initial;
+  margin-bottom: 30px;
+  padding: 0 30px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.actionButtons {
+  padding: 30px;
+  background-color: lbh-colour('lbh-text-white');
+}
+
+.bold {
+  font-weight: bold;
+}
