@@ -7,27 +7,29 @@ export default {
   argTypes: {},
 } as ComponentMeta<typeof InputSearch>;
 
-const Template: ComponentStory<typeof InputSearch> = (args) => <InputSearch {...args} />;
+const Template: ComponentStory<typeof InputSearch> = (args) => (
+  <InputSearch {...args} />
+);
 
 const base = {
   value: 'Search value',
   textButton: 'Search',
-  onChange: () => {}
+  onChange: () => {},
 };
 
 export const Normal = Template.bind({});
 Normal.args = {
-    ...base
+  ...base,
 };
 
 export const Loading = Template.bind({});
 Loading.args = {
   ...base,
-  isLoading: true
+  isLoading: true,
 };
 
 export const WithOutEnterEffect = Template.bind({});
 Loading.args = {
   ...base,
-  withOnEnter: false
+  withOnEnter: false,
 };

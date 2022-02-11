@@ -1,6 +1,6 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 import type { ChangeEvent } from 'react';
-import { useTabs, useDateInput } from './index';
+import { useTabs, useDateInput, useOnPressEnter } from './index';
 
 const components = {
   Block: 'block',
@@ -122,5 +122,17 @@ describe('useDateInput', () => {
     });
 
     expect(result.current.resultDate).toBe('2000-03-03T00:00:00.000');
+  });
+});
+
+describe('useOnPressEnter', () => {
+  it('return result date when not all fields are filled', () => {
+    const callback = jest.fn();
+
+    const { result } = renderHook(() => useOnPressEnter(callback));
+
+    result.current({ key: 'Enter' });
+
+    expect(callback).toHaveBeenCalled();
   });
 });
