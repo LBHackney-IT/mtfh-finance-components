@@ -1,7 +1,7 @@
 import { memo } from 'react';
+import type { KeyboardEvent } from 'react'
 
 import classnames from 'classnames';
-import PropTypes from 'prop-types';
 
 import CheckedSortIcon from '@assets/checked-sort.svg';
 
@@ -10,13 +10,23 @@ import Typography from '../Typography';
 
 import styles from './Sorts.module.scss';
 
+type SortsProps = {
+  options: Array<{
+    id: string,
+    label: string
+  }>,
+  onChange: (id: string) => void,
+  selectedOptions: Set<string>
+  className?: string
+}
+
 // use in conjunction with useSorts hook
-const Sorts = ({ options, selectedOptions, onChange, className }) => (
-  <div className={classnames(styles.container, className)}>
+const Sorts = ({ options, selectedOptions, onChange, className = "" }: SortsProps) => (
+  <div className={classnames(styles.container, className)} data-testid="sorts">
     {options.map(({ id, label }) => {
       const isActive = selectedOptions.has(id);
 
-      const onKeyDown = ({ key }) => {
+      const onKeyDown = ({ key }: KeyboardEvent<HTMLButtonElement>) => {
         if (key === 'Enter') onChange(id);
       };
 
@@ -36,21 +46,5 @@ const Sorts = ({ options, selectedOptions, onChange, className }) => (
     })}
   </div>
 );
-
-Sorts.propTypes = {
-  options: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      label: PropTypes.string,
-    })
-  ).isRequired,
-  onChange: PropTypes.func.isRequired,
-  selectedOptions: PropTypes.instanceOf(Set).isRequired,
-  className: PropTypes.string,
-};
-
-Sorts.defaultProps = {
-  className: '',
-};
 
 export default memo(Sorts);

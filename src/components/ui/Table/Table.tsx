@@ -1,21 +1,49 @@
 /* eslint-disable react/jsx-key */
 import { memo, useEffect } from 'react';
 import { useTable, usePagination } from 'react-table';
+import type { Column, Row, TablePropGetter, TableBodyPropGetter, TableBodyProps, IdType } from 'react-table'
 
 import classnames from 'classnames';
-import PropTypes from 'prop-types';
 
-import { DEFAULT_PAGE_SIZE } from '@constants';
+import { DEFAULT_PAGE_SIZE } from '../../../constants';
 
 import Pagination from './components/Pagination';
 import TokenPagination from './components/TokenPagination';
-import { PAGINATION_PROP_TYPES, TOKEN_PAGINATION_PROP_TYPES } from './constants';
+import type { PaginationOptions, TokenPaginationOptions } from './constants';
+import type { PaginationControl } from './components/Pagination';
 
 import styles from './Table.module.scss';
 
+// REF https://github.com/TanStack/react-table/discussions/2664
+type ColumnOptions = {
+  Header?: string | (() => void),
+  accessor?: string | (() => void),
+  isNumeric?: boolean,
+  isHidden?: boolean,
+  lightWeight?: boolean
+  boldHeader?: boolean
+  bold?: boolean
+  className?: string,
+  customWidth?: number,
+}
+
+type TableProps = {
+  data: Array<Record<string, string>>,
+  columns: Array<Column<ColumnOptions>>
+  isBigRow?: boolean,
+  pagination?: PaginationOptions,
+  tokenPagination?: TokenPaginationOptions
+};
+
 // In case of regular pagination use 'usePagination' hook from 'hooks' folder
 // In case of token pagination use 'useTokenPagination' hook
-const Table = ({ data, columns, isBigRow, pagination, tokenPagination }) => {
+const Table = ({ data, columns, isBigRow = false, pagination = {
+  pageSize: DEFAULT_PAGE_SIZE,
+  pageCount: -1,
+  totalCount: -1,
+  currentPage: 1,
+  onPageChange() {}
+}, tokenPagination }: TableProps) => {
   const { pageSize = DEFAULT_PAGE_SIZE, pageCount, currentPage } = pagination;
 
   const isPaginationEnabled = pageCount !== -1;
@@ -35,7 +63,7 @@ const Table = ({ data, columns, isBigRow, pagination, tokenPagination }) => {
     nextPage,
     previousPage,
     state: { pageIndex },
-  } = useTable(
+  } = useTable<ColumnOptions>(
     {
       data,
       columns,
@@ -65,7 +93,7 @@ const Table = ({ data, columns, isBigRow, pagination, tokenPagination }) => {
             <tr className="govuk-table__row" {...getHeaderGroupProps()}>
               {headers.map((column) => (
                 <th
-                  style={column.customWidth ? { width: column.customWidth } : null}
+                  style={column.customWidth ? { width: column.customWidth } : undefined}
                   className={classnames(
                     'govuk-table__header',
                     styles.cell,
@@ -98,7 +126,7 @@ const Table = ({ data, columns, isBigRow, pagination, tokenPagination }) => {
               >
                 {row.cells.map(({ column, render, getCellProps }) => (
                   <td
-                    style={column.customWidth ? { width: column.customWidth } : null}
+                    style={column.customWidth ? { width: column.customWidth } : undefined}
                     className={classnames(
                       'govuk-table__cell',
                       styles.cell,
@@ -138,37 +166,6 @@ const Table = ({ data, columns, isBigRow, pagination, tokenPagination }) => {
       {tokenPagination && <TokenPagination tokenPagination={tokenPagination} />}
     </>
   );
-};
-
-Table.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.object).isRequired,
-  columns: PropTypes.arrayOf(
-    PropTypes.shape({
-      Header: PropTypes.oneOfType([PropTypes.string, PropTypes.object, PropTypes.func]),
-      accessor: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-      isNumeric: PropTypes.bool,
-      lightWeight: PropTypes.bool,
-      boldHeader: PropTypes.bool,
-      bold: PropTypes.bool,
-      className: PropTypes.string,
-      customWidth: PropTypes.number,
-    })
-  ).isRequired,
-  pagination: PAGINATION_PROP_TYPES,
-  tokenPagination: TOKEN_PAGINATION_PROP_TYPES,
-  isBigRow: PropTypes.bool,
-};
-
-Table.defaultProps = {
-  pagination: {
-    pageSize: DEFAULT_PAGE_SIZE,
-    pageCount: -1,
-    totalCount: null,
-    currentPage: 1,
-    onPageChange() {},
-  },
-  tokenPagination: null,
-  isBigRow: false,
 };
 
 export default memo(Table);

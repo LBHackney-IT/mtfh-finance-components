@@ -1,11 +1,15 @@
 import { memo } from 'react';
 
-import { TOKEN_PAGINATION_PROP_TYPES } from '../constants';
+import type { TokenPaginationOptions } from '../constants';
 import PaginationNavButton from './PaginationNavButton';
 
 import styles from '../Table.module.scss';
 
-const TokenPagination = ({ tokenPagination }) => {
+type TokenPaginationProps = {
+  tokenPagination: TokenPaginationOptions
+}
+
+const TokenPagination = ({ tokenPagination }: TokenPaginationProps) => {
   const { hasNext, hasPrevious, goNext, goPrevious } = tokenPagination;
 
   return (
@@ -19,10 +23,6 @@ const TokenPagination = ({ tokenPagination }) => {
       <PaginationNavButton onClick={goNext} isInactive={!hasNext} label="Next >>" />
     </div>
   );
-};
-
-TokenPagination.propTypes = {
-  tokenPagination: TOKEN_PAGINATION_PROP_TYPES.isRequired,
 };
 
 export default memo(TokenPagination);
