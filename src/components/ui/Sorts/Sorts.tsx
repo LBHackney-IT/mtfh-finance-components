@@ -3,7 +3,7 @@ import type { KeyboardEvent } from 'react';
 
 import classnames from 'classnames';
 
-import CheckedSortIcon from '@assets/checked-sort.svg';
+import CheckedSortIcon from '../../../assets/checked-sort.svg';
 
 import Pressable from '../Pressable';
 import Typography from '../Typography';
