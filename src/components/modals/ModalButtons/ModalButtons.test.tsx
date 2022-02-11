@@ -27,6 +27,14 @@ describe('ModalButtons', () => {
     expect(content).toBeInTheDocument();
   });
 
+  it('does not renders cancel button when withCancel is false', () => {
+    render(<ModalButtons withCancel={false} />);
+
+    const content = screen.queryByTestId('cancel-button');
+
+    expect(content).toBeNull();
+  });
+
   it('fires onConfirm', () => {
     const onConfirm = jest.fn();
 

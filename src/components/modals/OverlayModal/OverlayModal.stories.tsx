@@ -17,8 +17,3 @@ export const Open = Template.bind({});
 Open.args = {
   isOpen: true,
 };
-
-export const Close = Template.bind({});
-Close.args = {
-  isOpen: false,
-};
