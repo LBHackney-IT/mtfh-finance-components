@@ -7,9 +7,9 @@ import Pressable from '../Pressable';
 import styles from './Tabs.module.scss';
 
 type TabsProps = {
-    tabs: Array<string>
-    changeTab: (value: string) => void
-    currentTab: string
+  tabs: Array<string>;
+  changeTab: (value: string) => void;
+  currentTab: string;
 };
 
 // use in conjunction with useTabs hook
@@ -35,6 +35,5 @@ const Tabs = ({ tabs, changeTab, currentTab }: TabsProps) => (
     </div>
   </div>
 );
-
 
 export default memo(Tabs);

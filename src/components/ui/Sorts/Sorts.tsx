@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import type { KeyboardEvent } from 'react'
+import type { KeyboardEvent } from 'react';
 
 import classnames from 'classnames';
 
@@ -12,16 +12,16 @@ import styles from './Sorts.module.scss';
 
 type SortsProps = {
   options: Array<{
-    id: string,
-    label: string
-  }>,
-  onChange: (id: string) => void,
-  selectedOptions: Set<string>
-  className?: string
-}
+    id: string;
+    label: string;
+  }>;
+  onChange: (id: string) => void;
+  selectedOptions: Set<string>;
+  className?: string;
+};
 
 // use in conjunction with useSorts hook
-const Sorts = ({ options, selectedOptions, onChange, className = "" }: SortsProps) => (
+const Sorts = ({ options, selectedOptions, onChange, className = '' }: SortsProps) => (
   <div className={classnames(styles.container, className)} data-testid="sorts">
     {options.map(({ id, label }) => {
       const isActive = selectedOptions.has(id);

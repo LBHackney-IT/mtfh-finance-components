@@ -11,16 +11,19 @@ export default {
 const Template: ComponentStory<typeof Sorts> = (args) => {
   const sortArgs = useSorts();
 
-  return <Sorts {...args} {...sortArgs}  />;
+  return <Sorts {...args} {...sortArgs} />;
 };
 
 export const Normal = Template.bind({});
 Normal.args = {
-    options: [{
-      id: "foo",
-      label: "item 1"
-    }, {
+  options: [
+    {
+      id: 'foo',
+      label: 'item 1',
+    },
+    {
       id: 'bar',
-      label: 'item 2'
-    }]
+      label: 'item 2',
+    },
+  ],
 };

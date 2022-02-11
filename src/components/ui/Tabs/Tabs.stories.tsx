@@ -10,20 +10,14 @@ export default {
 
 const Template: ComponentStory<typeof Tabs> = (args) => {
   const tabs = {
-        home: (<div>
-            Home
-        </div>),
-        garage: (<div>
-            Garage
-        </div>)
+    home: <div>Home</div>,
+    garage: <div>Garage</div>,
   };
-    
+
   const tabArgs = useTabs(tabs);
 
-  return <Tabs {...args} {...tabArgs}  />;
+  return <Tabs {...args} {...tabArgs} />;
 };
 
 export const Normal = Template.bind({});
-Normal.args = {
-
-};
+Normal.args = {};

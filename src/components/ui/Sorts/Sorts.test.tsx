@@ -1,26 +1,28 @@
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-import { renderHook } from '@testing-library/react-hooks'
+import { renderHook } from '@testing-library/react-hooks';
 
 import Sorts from './index';
-import { useSorts} from '../../../hooks'
+import { useSorts } from '../../../hooks';
 
 describe('Sorts', () => {
   it('renders className', () => {
-    const { result } = renderHook(() => useSorts())
+    const { result } = renderHook(() => useSorts());
 
-    const options = [{
-      id: 'foo',
-      label: 'item1'
-    }, {
-      id: 'bar',
-      label: 'item2'
-    }]
+    const options = [
+      {
+        id: 'foo',
+        label: 'item1',
+      },
+      {
+        id: 'bar',
+        label: 'item2',
+      },
+    ];
 
     render(<Sorts className="foo" options={options} {...result.current} />);
 
-    const content = screen.getByTestId('sorts')
+    const content = screen.getByTestId('sorts');
 
-    expect(content).toHaveClass('foo')
+    expect(content).toHaveClass('foo');
   });
 });
