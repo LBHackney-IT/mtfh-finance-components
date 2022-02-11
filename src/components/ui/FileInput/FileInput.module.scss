@@ -1,0 +1,12 @@
+.label {
+  &:global(.govuk-label) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.input {
+  position: relative;
+  left: 6px;
+  margin-top: 10px;
+}
