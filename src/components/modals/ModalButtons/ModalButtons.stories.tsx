@@ -12,13 +12,11 @@ const Template: ComponentStory<typeof ModalButtons> = (args) => (
 );
 
 export const Normal = Template.bind({});
-Normal.args = {
-  withCancel: false,
-};
+Normal.args = {};
 
-export const WithCancel = Template.bind({});
-WithCancel.args = {
-  withCancel: true,
+export const WithoutCancel = Template.bind({});
+WithoutCancel.args = {
+  withCancel: false,
 };
 
 export const IsLoading = Template.bind({});

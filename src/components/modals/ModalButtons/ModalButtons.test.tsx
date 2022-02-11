@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import ModalButtons from './ModalButtons';
 
 describe('ModalButtons', () => {
@@ -11,7 +12,7 @@ describe('ModalButtons', () => {
   });
 
   it('renders with given cancel text', () => {
-    render(<ModalButtons confirmText="cancel" />);
+    render(<ModalButtons cancelText="cancel" />);
 
     const content = screen.getByText('cancel');
 
@@ -24,5 +25,29 @@ describe('ModalButtons', () => {
     const content = screen.getByTestId('cancel-button');
 
     expect(content).toBeInTheDocument();
+  });
+
+  it('fires onConfirm', () => {
+    const onConfirm = jest.fn();
+
+    render(<ModalButtons onConfirm={onConfirm} withCancel confirmText="Save" />);
+
+    const content = screen.getByText('Save');
+
+    userEvent.click(content);
+
+    expect(onConfirm).toHaveBeenCalled();
+  });
+
+  it('fires onCancel', () => {
+    const onCancel = jest.fn();
+
+    render(<ModalButtons onCancel={onCancel} withCancel cancelText="cancel" />);
+
+    const content = screen.getByText('cancel');
+
+    userEvent.click(content);
+
+    expect(onCancel).toHaveBeenCalled();
   });
 });
