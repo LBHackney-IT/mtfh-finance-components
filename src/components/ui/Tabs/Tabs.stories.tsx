@@ -14,9 +14,14 @@ const Template: ComponentStory<typeof Tabs> = (args) => {
     garage: <div>Garage</div>,
   };
 
-  const tabArgs = useTabs(tabs);
+  const { tabsProps, tabContent } = useTabs(tabs);
 
-  return <Tabs {...args} {...tabArgs} />;
+  return (
+    <div>
+      <Tabs {...args} {...tabsProps} />
+      {tabContent}
+    </div>
+  );
 };
 
 export const Normal = Template.bind({});
