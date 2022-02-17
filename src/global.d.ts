@@ -1,3 +1,4 @@
+// https://stackoverflow.com/questions/45420448/how-to-import-external-type-into-global-d-ts-file
 declare module '*.module.css';
 declare module '*.svg';
 declare module '*.module.scss';
@@ -7,26 +8,3 @@ declare module 'react-loader-spinner' {
     className?: string;
   }
 }
-
-// import type { ColumnInstance, TableInstance, TableState } from 'react-table'
-// import type { PaginationControl} from './components/ui/Table/components/Pagination'
-
-// declare module 'react-table' {
-//   export interface ColumnInstance<D extends object = {}>{
-//     isHidden: boolean,
-//     customWidth?: number,
-//     isNumeric?: boolean,
-//     lightWeight?: boolean
-//     boldHeader?: boolean
-//     bold?: boolean
-//     className?: string
-//   }
-
-//   export interface TableInstance<D extends object = {}> extends PaginationControl {
-
-//   }
-
-//   export interface TableState<D extends object = {}> {
-//     pageIndex: number
-//   }
-// }

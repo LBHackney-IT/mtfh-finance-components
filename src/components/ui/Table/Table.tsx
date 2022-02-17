@@ -16,8 +16,8 @@ import styles from './Table.module.scss';
 
 // REF https://github.com/TanStack/react-table/discussions/2664
 type ColumnOptions = {
+  name: string,
   Header?: string | (() => void),
-  accessor?: string | (() => void),
   isNumeric?: boolean,
   isHidden?: boolean,
   lightWeight?: boolean
@@ -27,9 +27,11 @@ type ColumnOptions = {
   customWidth?: number,
 }
 
+type PaginationColumnOptions = ColumnOptions & PaginationControl
+
 type TableProps = {
-  data: Array<Record<string, string>>,
-  columns: Array<Column<ColumnOptions>>
+  data: Array<ColumnOptions | PaginationColumnOptions>,
+  columns: Array<Column<ColumnOptions | PaginationColumnOptions>>
   isBigRow?: boolean,
   pagination?: PaginationOptions,
   tokenPagination?: TokenPaginationOptions
@@ -63,7 +65,7 @@ const Table = ({ data, columns, isBigRow = false, pagination = {
     nextPage,
     previousPage,
     state: { pageIndex },
-  } = useTable<ColumnOptions>(
+  } = useTable(
     {
       data,
       columns,
