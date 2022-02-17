@@ -12,7 +12,7 @@ import styles from './LeftMenuButton.module.scss';
 type LeftMenuButtonProps = {
   buttonProps: {
     onClick?: () => void;
-    route: string;
+    route?: string;
     className?: string;
     text: string;
   };
