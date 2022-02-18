@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import type { ChangeEvent } from 'react';
+import type { ChangeEvent, KeyboardEvent } from 'react';
 
 import type { UseFormRegister } from 'react-hook-form';
 import Typography from '../Typography';
@@ -24,6 +24,8 @@ type InputProps = {
   withError?: boolean;
   description?: string | null;
   disabled?: boolean;
+  placeholder?: string;
+  onKeyPress?: (event: KeyboardEvent<HTMLInputElement>) => void;
 };
 
 const Input = ({

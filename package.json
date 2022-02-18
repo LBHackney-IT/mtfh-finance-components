@@ -39,16 +39,18 @@
     "luxon": "2.3.0",
     "react-loader-spinner": "4.0.0",
     "react-modal": "3.14.4",
-    "react-table": "7.7.0",
     "react-use": "17.3.2"
   },
   "peerDependencies": {
     "@reduxjs/toolkit": "1.7.2",
     "next": "12.0.10",
     "react": "^17.0.2",
-    "react-redux": "7.2.6"
+    "react-redux": "7.2.6",
+    "@reduxjs/toolkit": "1.7.2"
   },
   "devDependencies": {
+    "react-redux": "7.2.6",
+    "@reduxjs/toolkit": "1.7.2",
     "@babel/core": "7.16.12",
     "@babel/plugin-transform-react-jsx": "^7.16.7",
     "@babel/preset-env": "7.16.11",
@@ -74,7 +76,6 @@
     "@types/luxon": "2.0.9",
     "@types/react": "17.0.38",
     "@types/react-modal": "3.13.1",
-    "@types/react-table": "^7.7.9",
     "@typescript-eslint/eslint-plugin": "5.10.1",
     "@typescript-eslint/parser": "5.10.1",
     "babel-jest": "^27.4.6",
