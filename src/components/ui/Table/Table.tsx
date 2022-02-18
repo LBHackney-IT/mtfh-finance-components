@@ -1,7 +1,8 @@
 /* eslint-disable react/jsx-key */
 import { memo, useEffect } from 'react';
+import type {ReactNode } from 'react'
 import { useTable, usePagination } from 'react-table';
-import type { Column, Row, TablePropGetter, TableBodyPropGetter, TableBodyProps, IdType } from 'react-table'
+import type { TableHeaderProps, HeaderPropGetter, Column } from 'react-table'
 
 import classnames from 'classnames';
 
@@ -16,7 +17,7 @@ import styles from './Table.module.scss';
 
 // REF https://github.com/TanStack/react-table/discussions/2664
 type ColumnOptions = {
-  name: string,
+  accessor: string | (() => void),
   Header?: string | (() => void),
   isNumeric?: boolean,
   isHidden?: boolean,
@@ -27,11 +28,18 @@ type ColumnOptions = {
   customWidth?: number,
 }
 
-type PaginationColumnOptions = ColumnOptions & PaginationControl
+type ColumnData = {
+  [key: string]: string
+} & Omit<ColumnOptions, "accessor" | "Header">
+
+type HeaderColumnData = ColumnData & {
+  getHeaderProps: (propGetter?: HeaderPropGetter<{}>) => TableHeaderProps;
+  render: (type: 'Header' | 'Footer' | string, props?: object) => ReactNode;
+}
 
 type TableProps = {
-  data: Array<ColumnOptions | PaginationColumnOptions>,
-  columns: Array<Column<ColumnOptions | PaginationColumnOptions>>
+  data: Array<ColumnData>,
+  columns: Array<ColumnOptions>
   isBigRow?: boolean,
   pagination?: PaginationOptions,
   tokenPagination?: TokenPaginationOptions
@@ -44,7 +52,7 @@ const Table = ({ data, columns, isBigRow = false, pagination = {
   pageCount: -1,
   totalCount: -1,
   currentPage: 1,
-  onPageChange() {}
+  onPageChange() { }
 }, tokenPagination }: TableProps) => {
   const { pageSize = DEFAULT_PAGE_SIZE, pageCount, currentPage } = pagination;
 
@@ -68,7 +76,7 @@ const Table = ({ data, columns, isBigRow = false, pagination = {
   } = useTable(
     {
       data,
-      columns,
+      columns: (columns as ReadonlyArray<Column<ColumnData>>),
       manualPagination: true,
       initialState: {
         pageSize,
@@ -76,11 +84,11 @@ const Table = ({ data, columns, isBigRow = false, pagination = {
       },
       pageCount,
     },
-    isPaginationEnabled ? usePagination : null
+    isPaginationEnabled ? usePagination : () => { }
   );
 
   useEffect(() => {
-    const hiddenColumns = allColumns.filter((el) => el.isHidden).map((el) => el.id);
+    const hiddenColumns = (allColumns as unknown as Array<ColumnData>).filter((el) => el.isHidden).map((el) => el.id);
     setHiddenColumns(hiddenColumns);
   }, [allColumns, setHiddenColumns]);
 
@@ -93,7 +101,7 @@ const Table = ({ data, columns, isBigRow = false, pagination = {
         <thead className="govuk-table__head">
           {headerGroups.map(({ getHeaderGroupProps, headers }) => (
             <tr className="govuk-table__row" {...getHeaderGroupProps()}>
-              {headers.map((column) => (
+              {(headers as unknown as Array<HeaderColumnData>).map((column) => (
                 <th
                   style={column.customWidth ? { width: column.customWidth } : undefined}
                   className={classnames(
@@ -126,25 +134,29 @@ const Table = ({ data, columns, isBigRow = false, pagination = {
                 })}
                 {...row.getRowProps()}
               >
-                {row.cells.map(({ column, render, getCellProps }) => (
-                  <td
-                    style={column.customWidth ? { width: column.customWidth } : undefined}
-                    className={classnames(
-                      'govuk-table__cell',
-                      styles.cell,
-                      column.className,
-                      {
-                        'govuk-table__cell--numeric': column.isNumeric,
-                        [styles.lightWeight]: column.lightWeight,
-                        [styles.bold]: column.bold,
-                        [styles.bigRow]: isBigRow,
-                      }
-                    )}
-                    {...getCellProps()}
-                  >
-                    {render('Cell')}
-                  </td>
-                ))}
+                {row.cells.map(({ column, render, getCellProps }) => {
+                  const typedColumn = column as unknown as ColumnData
+
+                  return (
+                    <td
+                      style={typedColumn.customWidth ? { width: typedColumn.customWidth } : undefined}
+                      className={classnames(
+                        'govuk-table__cell',
+                        styles.cell,
+                        typedColumn.className,
+                        {
+                          'govuk-table__cell--numeric': typedColumn.isNumeric,
+                          [styles.lightWeight]: typedColumn.lightWeight,
+                          [styles.bold]: typedColumn.bold,
+                          [styles.bigRow]: isBigRow,
+                        }
+                      )}
+                      {...getCellProps()}
+                    >
+                      {render('Cell')}
+                    </td>
+                  )
+                })}
               </tr>
             );
           })}
