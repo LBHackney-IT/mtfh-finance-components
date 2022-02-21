@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import type { ReactNode } from 'react';
 
 type TabComponents = {
@@ -9,10 +9,6 @@ const useTabs = (components: TabComponents) => {
   const labels = useMemo(() => Object.keys(components), [components]);
 
   const [tab, setTab] = useState(labels[0]);
-
-  useEffect(() => {
-    setTab(labels[0]);
-  }, [labels]);
 
   return useMemo(
     () => ({
