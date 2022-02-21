@@ -1,4 +1,4 @@
-import type { PaginationOptions } from './constants'
+import type { PaginationOptions } from './constants';
 
 export const range = (from: number, to: number): Array<number> => {
   const step = 1;
@@ -16,9 +16,14 @@ export const range = (from: number, to: number): Array<number> => {
 
 export const DOTS = 'DOTS' as const;
 
-type OmittedPage = { key: 'left' | 'right', value: 'DOTS' }
+type OmittedPage = { key: 'left' | 'right'; value: 'DOTS' };
 
-export const getPageNumbers = ({ pageCount, currentPage }: Omit<PaginationOptions, "pageSize" | "totalCount" | "onPageChange">): Array<number | OmittedPage> => {
+export const getPageNumbers = ({
+  pageCount,
+  currentPage,
+}: Omit<PaginationOptions, 'pageSize' | 'totalCount' | 'onPageChange'>): Array<
+  number | OmittedPage
+> => {
   const pageNeighbours = 1;
   const totalNumbers = pageNeighbours * 2 + 3;
   const totalBlocks = totalNumbers + 2;

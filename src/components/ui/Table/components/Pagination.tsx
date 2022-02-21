@@ -7,29 +7,35 @@ import Pressable from '../../Pressable';
 import Typography from '../../Typography';
 import { getPageNumbers } from '../helpers';
 import type { PaginationOptions } from '../constants';
-import { DEFAULT_PAGE_SIZE } from '../../../../constants'
+import { DEFAULT_PAGE_SIZE } from '../../../../constants';
 import PaginationNavButton from './PaginationNavButton';
 
 import styles from '../Table.module.scss';
 
-type PageSetter = () => void
+type PageSetter = () => void;
 
 export type PaginationControl = {
-  canPreviousPage: boolean,
-  previousPage: PageSetter,
-  canNextPage: boolean,
-  nextPage: PageSetter,
-  gotoPage: (pageNum: number) => void,
-  pageIndex: number,
-}
+  canPreviousPage: boolean;
+  previousPage: PageSetter;
+  canNextPage: boolean;
+  nextPage: PageSetter;
+  gotoPage: (pageNum: number) => void;
+  pageIndex: number;
+};
 
 type PaginationProps = {
-  initialOptions: PaginationOptions
-  controls: PaginationControl
+  initialOptions: PaginationOptions;
+  controls: PaginationControl;
 };
 
 const Pagination = ({ initialOptions, controls }: PaginationProps) => {
-  const { totalCount, currentPage, pageCount, pageSize = DEFAULT_PAGE_SIZE, onPageChange } = initialOptions;
+  const {
+    totalCount,
+    currentPage,
+    pageCount,
+    pageSize = DEFAULT_PAGE_SIZE,
+    onPageChange,
+  } = initialOptions;
   const { canPreviousPage, previousPage, canNextPage, nextPage, gotoPage, pageIndex } =
     controls;
 
@@ -57,7 +63,7 @@ const Pagination = ({ initialOptions, controls }: PaginationProps) => {
       />
 
       {pageNumbers.map((page) => {
-        if (typeof page !== "number") {
+        if (typeof page !== 'number') {
           return (
             <Typography
               key={page.key}

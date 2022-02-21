@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-key */
 import { memo, useEffect } from 'react';
-import type {ReactNode } from 'react'
+import type { ReactNode } from 'react';
 import { useTable, usePagination } from 'react-table';
-import type { TableHeaderProps, HeaderPropGetter, Column } from 'react-table'
+import type { TableHeaderProps, HeaderPropGetter, Column } from 'react-table';
 
 import classnames from 'classnames';
 
@@ -17,43 +17,49 @@ import styles from './Table.module.scss';
 
 // REF https://github.com/TanStack/react-table/discussions/2664
 type ColumnOptions = {
-  accessor: string | (() => void),
-  Header?: string | (() => void),
-  isNumeric?: boolean,
-  isHidden?: boolean,
-  lightWeight?: boolean
-  boldHeader?: boolean
-  bold?: boolean
-  className?: string,
-  customWidth?: number,
-}
+  accessor: string | (() => void);
+  Header?: string | (() => void);
+  isNumeric?: boolean;
+  isHidden?: boolean;
+  lightWeight?: boolean;
+  boldHeader?: boolean;
+  bold?: boolean;
+  className?: string;
+  customWidth?: number;
+};
 
 type ColumnData = {
-  [key: string]: string
-} & Omit<ColumnOptions, "accessor" | "Header">
+  [key: string]: string;
+};
 
 type HeaderColumnData = ColumnData & {
   getHeaderProps: (propGetter?: HeaderPropGetter<{}>) => TableHeaderProps;
   render: (type: 'Header' | 'Footer' | string, props?: object) => ReactNode;
-}
+};
 
 type TableProps = {
-  data: Array<ColumnData>,
-  columns: Array<ColumnOptions>
-  isBigRow?: boolean,
-  pagination?: PaginationOptions,
-  tokenPagination?: TokenPaginationOptions
+  data: Array<ColumnData>;
+  columns: Array<ColumnOptions>;
+  isBigRow?: boolean;
+  pagination?: PaginationOptions;
+  tokenPagination?: TokenPaginationOptions;
 };
 
 // In case of regular pagination use 'usePagination' hook from 'hooks' folder
 // In case of token pagination use 'useTokenPagination' hook
-const Table = ({ data, columns, isBigRow = false, pagination = {
-  pageSize: DEFAULT_PAGE_SIZE,
-  pageCount: -1,
-  totalCount: -1,
-  currentPage: 1,
-  onPageChange() { }
-}, tokenPagination }: TableProps) => {
+const Table = ({
+  data,
+  columns,
+  isBigRow = false,
+  pagination = {
+    pageSize: DEFAULT_PAGE_SIZE,
+    pageCount: -1,
+    totalCount: -1,
+    currentPage: 1,
+    onPageChange() {},
+  },
+  tokenPagination,
+}: TableProps) => {
   const { pageSize = DEFAULT_PAGE_SIZE, pageCount, currentPage } = pagination;
 
   const isPaginationEnabled = pageCount !== -1;
@@ -76,7 +82,7 @@ const Table = ({ data, columns, isBigRow = false, pagination = {
   } = useTable(
     {
       data,
-      columns: (columns as ReadonlyArray<Column<ColumnData>>),
+      columns: columns as ReadonlyArray<Column<ColumnData>>,
       manualPagination: true,
       initialState: {
         pageSize,
@@ -84,11 +90,13 @@ const Table = ({ data, columns, isBigRow = false, pagination = {
       },
       pageCount,
     },
-    isPaginationEnabled ? usePagination : () => { }
+    isPaginationEnabled ? usePagination : () => {}
   );
 
   useEffect(() => {
-    const hiddenColumns = (allColumns as unknown as Array<ColumnData>).filter((el) => el.isHidden).map((el) => el.id);
+    const hiddenColumns = (allColumns as unknown as Array<ColumnData>)
+      .filter((el) => el.isHidden)
+      .map((el) => el.id);
     setHiddenColumns(hiddenColumns);
   }, [allColumns, setHiddenColumns]);
 
@@ -135,11 +143,15 @@ const Table = ({ data, columns, isBigRow = false, pagination = {
                 {...row.getRowProps()}
               >
                 {row.cells.map(({ column, render, getCellProps }) => {
-                  const typedColumn = column as unknown as ColumnData
+                  const typedColumn = column as unknown as ColumnData;
 
                   return (
                     <td
-                      style={typedColumn.customWidth ? { width: typedColumn.customWidth } : undefined}
+                      style={
+                        typedColumn.customWidth
+                          ? { width: typedColumn.customWidth }
+                          : undefined
+                      }
                       className={classnames(
                         'govuk-table__cell',
                         styles.cell,
@@ -155,7 +167,7 @@ const Table = ({ data, columns, isBigRow = false, pagination = {
                     >
                       {render('Cell')}
                     </td>
-                  )
+                  );
                 })}
               </tr>
             );

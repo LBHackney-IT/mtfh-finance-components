@@ -6,8 +6,8 @@ import PaginationNavButton from './PaginationNavButton';
 import styles from '../Table.module.scss';
 
 type TokenPaginationProps = {
-  tokenPagination: TokenPaginationOptions
-}
+  tokenPagination: TokenPaginationOptions;
+};
 
 const TokenPagination = ({ tokenPagination }: TokenPaginationProps) => {
   const { hasNext, hasPrevious, goNext, goPrevious } = tokenPagination;

@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import type { MouseEvent } from 'react'
+import type { MouseEvent } from 'react';
 
 import classnames from 'classnames';
 
@@ -9,12 +9,16 @@ import Typography from '../../Typography';
 import styles from '../Table.module.scss';
 
 type PaginationNavButtonProps = {
-  label: string,
-  isInactive: boolean,
-  onClick: (e: MouseEvent) => void
-}
+  label: string;
+  isInactive: boolean;
+  onClick: (e: MouseEvent) => void;
+};
 
-const PaginationNavButton = ({ label, onClick, isInactive }: PaginationNavButtonProps) => (
+const PaginationNavButton = ({
+  label,
+  onClick,
+  isInactive,
+}: PaginationNavButtonProps) => (
   <Pressable
     onClick={onClick}
     className={classnames(styles.page, {
