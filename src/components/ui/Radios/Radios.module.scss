@@ -1,0 +1,16 @@
+.radioButtons {
+  &.horizontal :global {
+    .lbh-radios {
+      display: flex;
+      align-items: center;
+    }
+
+    .govuk-radios__item {
+      margin-bottom: 0;
+
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+  }
+}

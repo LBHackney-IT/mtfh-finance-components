@@ -1,0 +1,43 @@
+@import 'src/theme';
+
+.tabsContainer:global(.lbh-tabs) {
+  width: 100%;
+  margin-bottom: 30px;
+
+  .tabs {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-left: 15px;
+    border-bottom: 1px solid lbh-colour('lbh-grey-3');
+  }
+
+  .tabItem {
+    position: relative;
+    height: 50px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 12px 24px;
+    background-color: lbh-colour('lbh-grey-4');
+
+    p {
+      color: $lbh-text-colour;
+    }
+
+    &.active {
+      height: 70px;
+      margin-right: 10px;
+      margin-bottom: -1px;
+      padding: 23px 34px;
+      border: 1px solid lbh-colour('lbh-grey-3');
+      border-bottom: 0;
+      background-color: $lbh-body-background-colour;
+    }
+  }
+
+  .tabText {
+    text-align: center;
+    text-decoration: none;
+  }
+}
