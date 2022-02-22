@@ -17,7 +17,7 @@ import styles from './Table.module.scss';
 // REF https://github.com/TanStack/react-table/discussions/2664
 type ColumnOptions = {
   accessor: string;
-  Cell?: (input: Function | Component) => ReactNode;
+  Cell?: Function | Component;
   Header: string | Function | Component;
   isNumeric?: boolean;
   isHidden?: boolean;
