@@ -18,7 +18,7 @@ import styles from './Table.module.scss';
 type ColumnOptions = {
   accessor: string;
   Cell?: (input: Function | Component) => ReactNode;
-  Header: string | ((input: string | Function | Component) => ReactNode);
+  Header: string | Function | Component;
   isNumeric?: boolean;
   isHidden?: boolean;
   lightWeight?: boolean;
