@@ -31,10 +31,8 @@ const ModalButtons = ({
     </Button>
 
     {withCancel && (
-      <Button onClick={onCancel} variant="danger" >
-        <span data-testid="cancel-button">
-            {cancelText}
-        </span>
+      <Button onClick={onCancel} variant="danger">
+        <span data-testid="cancel-button">{cancelText}</span>
       </Button>
     )}
   </div>
