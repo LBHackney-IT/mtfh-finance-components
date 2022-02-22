@@ -2,7 +2,6 @@ export { default as HeaderBlock } from './blocks/HeaderBlock';
 export { default as InfoItem } from './blocks/InfoItem';
 export { default as InformationBlock } from './blocks/InformationBlock';
 
-// eslint-disable-next-line import/prefer-default-export
 export { default as GrayBox } from './layout/GrayBox';
 export { default as InfoItemsList } from './layout/InfoItemsList';
 export { default as InformationBlocksContainer } from './layout/InformationBlocksContainer';
