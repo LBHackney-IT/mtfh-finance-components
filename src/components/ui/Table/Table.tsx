@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-key */
 import { memo, useEffect } from 'react';
-import type { ReactNode } from 'react';
+import type { ReactNode, Component } from 'react';
 import { useTable, usePagination } from 'react-table';
 import type { TableHeaderProps, HeaderPropGetter, Column } from 'react-table';
 
@@ -11,14 +11,14 @@ import { DEFAULT_PAGE_SIZE } from '../../../constants';
 import Pagination from './components/Pagination';
 import TokenPagination from './components/TokenPagination';
 import type { PaginationOptions, TokenPaginationOptions } from './constants';
-import type { PaginationControl } from './components/Pagination';
 
 import styles from './Table.module.scss';
 
 // REF https://github.com/TanStack/react-table/discussions/2664
 type ColumnOptions = {
-  accessor: string | (() => void);
-  Header?: string | (() => void);
+  accessor: string;
+  Cell?: (input: Function | Component) => ReactNode;
+  Header: string | ((input: string | Function | Component) => ReactNode);
   isNumeric?: boolean;
   isHidden?: boolean;
   lightWeight?: boolean;
