@@ -33,6 +33,7 @@ export const WithErrorMessage = Template.bind({});
 WithErrorMessage.args = {
   name: 'select',
   options,
+  withBorder: true,
   errorMessage: 'The error message',
 };
 
