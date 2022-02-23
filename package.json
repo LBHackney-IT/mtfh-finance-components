@@ -1,7 +1,7 @@
 {
   "name": "@hackney/mtfh-finance-components",
   "description": "Components library for Finance project",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "publishConfig": {
     "access": "public"
   },
