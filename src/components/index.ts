@@ -37,6 +37,7 @@ export { default as Popup } from './ui/Popup';
 export { default as Pressable } from './ui/Pressable';
 export { RadioButton, RadioButtons } from './ui/Radios';
 export { default as Sorts } from './ui/Sorts';
+export { default as Select } from './ui/Select';
 export { default as Table } from './ui/Table';
 export { default as Tabs } from './ui/Tabs';
 export { default as Typography } from './ui/Typography';
