@@ -13,9 +13,6 @@ import packageJson from './package.json';
 
 const rootPath = dirname(fileURLToPath(import.meta.url));
 
-// NOTE Has to use CJS for postcss plugin
-const autoImport = require('./autoImport');
-
 export default [
   {
     input: 'src/index.ts',
@@ -39,9 +36,9 @@ export default [
       peerDepsExternal(),
       typescript({ tsconfig: './tsconfig.json' }),
       postcss({
-        extract: false,
-        modules: true,
-        plugins: [autoImport()],
+        extract: true,
+        // Has to disable modules otherwise the imported stylesheet will be prefixed with globals_
+        modules: false,
         use: ['sass'],
       }),
       resolve(),
@@ -53,6 +50,6 @@ export default [
     input: 'dist/esm/types/index.d.ts',
     output: [{ file: 'dist/index.d.ts', format: 'esm' }],
     plugins: [dts()],
-    external: [/\.css$/],
+    external: [/\.css|scss$/],
   },
 ];
