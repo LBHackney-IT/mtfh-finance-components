@@ -13,6 +13,7 @@ import styles from './LeftMenu.module.scss';
 type LinkButtonProps = {
   text: string;
   route: string;
+  className?: string;
   onClick?: () => void;
 };
 
@@ -58,9 +59,7 @@ const LeftMenu = ({ regularLinks, pageSpecificLinks }: LeftMenuProps) => {
               icon={icon}
               buttonProps={{
                 ...buttonProps,
-                className: `${styles.link} ${
-                  router?.pathname === buttonProps.route ? styles.bold : ''
-                }`,
+                className: `${styles.link} ${buttonProps.className ?? ''}`,
               }}
               additionalComponent={additionalComponent}
             />
