@@ -8,6 +8,7 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import alias from '@rollup/plugin-alias';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
+import svgr from '@svgr/rollup';
 import packageJson from './package.json';
 
 const rootPath = dirname(fileURLToPath(import.meta.url));
@@ -31,6 +32,7 @@ export default [
       },
     ],
     plugins: [
+      svgr(),
       alias({
         entries: [{ find: '@assets', replacement: `${rootPath}/src/assets` }],
       }),

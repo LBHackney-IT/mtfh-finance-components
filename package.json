@@ -34,6 +34,7 @@
   "dependencies": {
     "@emotion/react": "11.7.1",
     "@mui/material": "5.3.1",
+    "@svgr/rollup": "^6.2.1",
     "classnames": "^2.3.1",
     "lbh-frontend": "^3.6.1",
     "luxon": "2.3.0",
