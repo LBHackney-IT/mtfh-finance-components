@@ -1,14 +1,17 @@
+import type { UseFormRegister } from 'react-hook-form';
+import type { ChangeEvent } from 'react';
 import LeftBorderContainer from '../../layout/LeftBorderContainer';
 import ErrorMessage from '../ErrorMessage';
 
 type SelectProps = {
   name: string;
   options: Array<SelectOption>;
-  register?: any;
+  register?: UseFormRegister<{ [key: string]: string }>;
   withBorder?: boolean;
   errorMessage?: string;
   className?: string;
   label?: string;
+  onChange?: (event: ChangeEvent<HTMLSelectElement>) => void;
 };
 
 type SelectOption = {
@@ -20,7 +23,7 @@ const Select = ({
   name,
   label = '',
   options,
-  register = () => {},
+  register,
   withBorder = false,
   errorMessage = '',
   className = '',
@@ -40,10 +43,10 @@ const Select = ({
 
       <select
         id={name}
-        name={name}
         className="govuk-select lbh-select"
+        data-testid="select"
         {...rest}
-        {...register(name)}
+        {...(register && register(name))}
       >
         {options.map((option) => (
           <option key={option.value} value={option.value}>
