@@ -60,7 +60,7 @@ const LeftMenu = ({ regularLinks, pageSpecificLinks }: LeftMenuProps) => {
               buttonProps={{
                 ...buttonProps,
                 className: `${styles.link} ${
-                  router.pathname === buttonProps.route ? styles.bold : ''
+                  router?.pathname === buttonProps.route ? styles.bold : ''
                 } ${buttonProps.className ?? ''}`,
               }}
               additionalComponent={additionalComponent}
