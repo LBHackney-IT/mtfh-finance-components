@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 
 import { useRouter } from 'next/router';
 
+import classnames from 'classnames';
 import Logo from '../../../assets/logo.svg';
 
 import HorizontalDivider from '../../ui/HorizontalDivider';
@@ -13,6 +14,7 @@ import styles from './LeftMenu.module.scss';
 type LinkButtonProps = {
   text: string;
   route: string;
+  className?: string;
   onClick?: () => void;
 };
 
@@ -51,6 +53,7 @@ const LeftMenu = ({ regularLinks, pageSpecificLinks }: LeftMenuProps) => {
           if (!isPageLink(link)) return <HorizontalDivider key={link.id} />;
 
           const { icon, buttonProps, additionalComponent } = link;
+          const isActiveRoute = router?.pathname === buttonProps.route;
 
           return (
             <LeftMenuButton
@@ -58,7 +61,11 @@ const LeftMenu = ({ regularLinks, pageSpecificLinks }: LeftMenuProps) => {
               icon={icon}
               buttonProps={{
                 ...buttonProps,
-                className: styles.link,
+                className: classnames(
+                  styles.link,
+                  { [styles.bold]: isActiveRoute },
+                  buttonProps.className
+                ),
               }}
               additionalComponent={additionalComponent}
             />
