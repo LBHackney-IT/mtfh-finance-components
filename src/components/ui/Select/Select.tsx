@@ -46,7 +46,7 @@ const Select = ({
         className="govuk-select lbh-select"
         data-testid="select"
         {...rest}
-        {...(register && register(name))}
+        {...register?.(name)}
       >
         {options.map((option) => (
           <option key={option.value} value={option.value}>
