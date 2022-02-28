@@ -11,16 +11,11 @@ type LoaderProps = {
   isLoading: boolean;
 };
 
-const Loader = ({ size = 40, isLoading, className = '' }: LoaderProps) => (
-  <div data-testid="loader" className={classnames(className, styles.center)}>
-    <LoaderSpinner
-      visible={isLoading}
-      type="Oval"
-      color="#00664f"
-      width={size}
-      height={size}
-    />
-  </div>
-);
+const Loader = ({ size = 40, isLoading, className = '' }: LoaderProps) =>
+  isLoading ? (
+    <div data-testid="loader" className={classnames(className, styles.center)}>
+      <LoaderSpinner visible type="Oval" color="#00664f" width={size} height={size} />
+    </div>
+  ) : null;
 
 export default memo(Loader);
