@@ -12,15 +12,15 @@ type LoaderProps = {
 };
 
 const Loader = ({ size = 40, isLoading, className = '' }: LoaderProps) => (
-  <LoaderSpinner
-    className={classnames(className, styles.center)}
-    data-testid="loader"
-    visible={isLoading}
-    type="Oval"
-    color="#00664f"
-    width={size}
-    height={size}
-  />
+  <div data-testid="loader" className={classnames(className, styles.center)}>
+    <LoaderSpinner
+      visible={isLoading}
+      type="Oval"
+      color="#00664f"
+      width={size}
+      height={size}
+    />
+  </div>
 );
 
 export default memo(Loader);

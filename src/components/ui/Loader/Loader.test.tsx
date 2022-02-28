@@ -1,12 +1,11 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import Loader from './Loader';
 
 describe('Loader', () => {
   it('renders with given className', () => {
     render(<Loader className="foo" isLoading />);
 
-    // NOTE Cannot pass data-testid to the wrapper
-    const content = document.querySelector("div[aria-busy='true']");
+    const content = screen.getByTestId('loader');
 
     expect(content).toHaveClass('foo');
   });
