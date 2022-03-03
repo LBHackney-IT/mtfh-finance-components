@@ -14,6 +14,7 @@ type InputSearchProps = {
   withOnEnter?: boolean;
   isLoading?: boolean;
   onClick?: () => void;
+  placeholder?: string;
 };
 
 const InputSearch = ({
@@ -21,6 +22,7 @@ const InputSearch = ({
   textButton = 'Search',
   isLoading = false,
   withOnEnter = true,
+  placeholder = 'Search',
   ...rest
 }: InputSearchProps) => {
   const onEnterHandler = withOnEnter && onClick ? onClick : () => {};
@@ -30,7 +32,7 @@ const InputSearch = ({
     <div className={styles.inputContainer}>
       <Input
         name="search"
-        placeholder="Search"
+        placeholder={placeholder}
         classNameContainer={styles.input}
         onKeyPress={onPressEnter}
         {...rest}
