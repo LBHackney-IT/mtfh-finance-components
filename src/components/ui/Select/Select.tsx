@@ -10,6 +10,7 @@ type SelectProps = {
   withBorder?: boolean;
   errorMessage?: string;
   className?: string;
+  selectClassName?: string;
   label?: string;
   onChange?: (event: ChangeEvent<HTMLSelectElement>) => void;
 };
@@ -27,6 +28,7 @@ const Select = ({
   withBorder = false,
   errorMessage = '',
   className = '',
+  selectClassName = '',
   ...rest
 }: SelectProps) => (
   <LeftBorderContainer
@@ -43,7 +45,7 @@ const Select = ({
 
       <select
         id={name}
-        className="govuk-select lbh-select"
+        className={`govuk-select lbh-select ${selectClassName}`}
         data-testid="select"
         {...rest}
         {...register?.(name)}
